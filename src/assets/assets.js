@@ -53,6 +53,7 @@ import k_wc_1_1 from "./k-wc-1-1.webp";
 import k_wc_1_2 from "./k-wc-1-2.webp";
 import k_wc_1_3 from "./k-wc-1-3.webp";
 import k_wc_1_4 from "./k-wc-1-4.webp";
+
 export const assets = {
   logo,
   banner_1,
