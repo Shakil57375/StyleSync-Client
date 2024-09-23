@@ -1,12 +1,11 @@
 import { FaSearch, FaUser, FaShoppingBag } from 'react-icons/fa';
-
+import { assets } from '../assets/assets';
 const Navbar = () => {
   return (
     <nav className="w-full py-8 flex items-center justify-between ">
       {/* Logo */}
       <div className="flex items-center space-x-2 text-xl font-semibold">
-        <span className="font-bold">FOREVER</span>
-        <span className="text-pink-500">.</span>
+        <img src={assets.logo} alt="" className='w-16 h-16' />
       </div>
 
       {/* Navigation Links */}
