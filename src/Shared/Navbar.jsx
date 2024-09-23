@@ -1,6 +1,7 @@
 import { FaUser } from "react-icons/fa";
 import { IoBagOutline } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
+import { MdOutlineMenuOpen } from "react-icons/md";
 import { assets } from "../assets/assets";
 import { Link } from "react-router-dom";
 import ActiveLink from "../Components/ActiveLink/ActiveLink";
@@ -56,6 +57,7 @@ const Navbar = () => {
               5
             </span>
           </Link>
+          <MdOutlineMenuOpen className="hover:text-gray-500 cursor-pointer text-3xl" />
         </div>
       </div>
     </nav>
