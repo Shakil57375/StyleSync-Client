@@ -2,7 +2,7 @@ import { FaSearch, FaUser, FaShoppingBag } from 'react-icons/fa';
 
 const Navbar = () => {
   return (
-    <nav className="w-full py-4 flex items-center justify-between px-8 shadow-md">
+    <nav className="w-full py-8 flex items-center justify-between ">
       {/* Logo */}
       <div className="flex items-center space-x-2 text-xl font-semibold">
         <span className="font-bold">FOREVER</span>
