@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Trash = () => {
+const Footer = () => {
   return (
     <div>
-      
+      <p>Footer</p>
     </div>
   )
 }
 
-export default Trash
+export default Footer

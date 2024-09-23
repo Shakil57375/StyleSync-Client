@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TaskDetails = () => {
+const Cart = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const TaskDetails = () => {
   )
 }
 
-export default TaskDetails
+export default Cart

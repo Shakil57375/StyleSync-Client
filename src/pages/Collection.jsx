@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Tasks = () => {
+const Collection = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Tasks = () => {
   )
 }
 
-export default Tasks
+export default Collection
