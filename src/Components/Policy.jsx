@@ -3,7 +3,7 @@ import { FiRefreshCw, FiCheckCircle, FiHeadphones } from "react-icons/fi"; // Im
 
 const Policy = () => {
   return (
-    <div className="flex justify-around items-center bg-white py-12 px-4">
+    <div className="flex lg:flex-row flex-col justify-around items-center bg-white py-12 px-4">
       {/* Exchange Policy */}
       <div className="text-center">
         <FiRefreshCw className="text-4xl text-black mx-auto mb-2" /> {/* Icon */}

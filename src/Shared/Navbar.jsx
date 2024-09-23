@@ -16,7 +16,7 @@ const Navbar = () => {
       </Link>
 
       {/* Navigation Links */}
-      <div className="flex space-x-8 text-sm font-medium items-center">
+      <div className=" hidden space-x-8 text-sm font-medium lg:items-center  lg:flex">
         <ActiveLink to={"/"} className="hover:text-gray-500">
           HOME
         </ActiveLink>
@@ -36,7 +36,6 @@ const Navbar = () => {
 
       {/* Admin Panel Button */}
       <div className="flex items-center space-x-6">
-        
 
         {/* Icons */}
         <div className="flex items-center space-x-6">
@@ -51,12 +50,12 @@ const Navbar = () => {
                 </div>
             </div>
           </div>
-          <div className="relative">
+          <Link to={"/cart"} className="relative">
             <IoBagOutline className="hover:text-gray-500 cursor-pointer text-3xl relative" />
             <span className="absolute bottom-0 right-0 bg-black text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
-              0
+              5
             </span>
-          </div>
+          </Link>
         </div>
       </div>
     </nav>
