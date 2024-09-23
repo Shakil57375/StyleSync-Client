@@ -1,12 +1,13 @@
 import { FaSearch, FaUser, FaShoppingBag } from 'react-icons/fa';
 import { assets } from '../assets/assets';
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <nav className="w-full py-8 flex items-center justify-between ">
       {/* Logo */}
-      <div className="flex items-center space-x-2 text-xl font-semibold">
+      <Link to={"/"} className="flex items-center space-x-2 text-xl font-semibold">
         <img src={assets.logo} alt="" className='w-16 h-16' />
-      </div>
+      </Link>
 
       {/* Navigation Links */}
       <div className="flex space-x-8 text-sm font-medium">
