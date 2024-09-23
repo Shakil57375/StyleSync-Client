@@ -1,6 +1,6 @@
 import { FaSearch, FaUser, FaShoppingBag } from 'react-icons/fa';
 import { assets } from '../assets/assets';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 const Navbar = () => {
   return (
     <nav className="w-full py-8 flex items-center justify-between ">
@@ -11,18 +11,18 @@ const Navbar = () => {
 
       {/* Navigation Links */}
       <div className="flex space-x-8 text-sm font-medium">
-        <a href="#home" className="hover:text-gray-500">
+        <NavLink to={"/"} className="hover:text-gray-500">
           HOME
-        </a>
-        <a href="#collection" className="hover:text-gray-500">
+        </NavLink>
+        <NavLink to={"/collection"} className="hover:text-gray-500">
           COLLECTION
-        </a>
-        <a href="#about" className="hover:text-gray-500">
+        </NavLink>
+        <NavLink to={"/about"} className="hover:text-gray-500">
           ABOUT
-        </a>
-        <a href="#contact" className="hover:text-gray-500">
+        </NavLink>
+        <NavLink to={"/contact"} className="hover:text-gray-500">
           CONTACT
-        </a>
+        </NavLink>
       </div>
 
       {/* Admin Panel Button */}
