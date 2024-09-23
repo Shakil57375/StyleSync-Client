@@ -1,5 +1,24 @@
-.active{
-    text-decoration: underline;
-    color: blue;
+.active {
     font-weight: bold;
-}
+    position: relative;
+  }
+  
+  .active::before {
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid black;
+    width: 0; /* Initial width of the underline is 0 */
+    height: 2px;
+    bottom: -4px; /* Adjust as necessary */
+    left: 50%; /* Start the animation from the middle */
+    transform: translateX(-50%); /* Center it horizontally */
+    transition: width 0.4s ease-out; /* Smooth transition for the width */
+  }
+  
+  .active:hover::before, /* Optionally add this for hover effect */
+  .active::before {
+    width: 100%; /* Full width on active state */
+    left: 0; /* Reset left to align the full width */
+    transform: translateX(0); /* Ensure it's fully aligned */
+  }
+  
