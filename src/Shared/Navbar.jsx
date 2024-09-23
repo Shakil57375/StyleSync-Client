@@ -39,9 +39,11 @@ const Navbar = () => {
         
 
         {/* Icons */}
-        <div className="flex items-center space-x-6 text-lg">
+        <div className="flex items-center space-x-6">
           <CiSearch className="hover:text-gray-500 cursor-pointer text-3xl" />
-          <FaUser className="hover:text-gray-500 cursor-pointer text-3xl"  />
+          <div className="group relative">
+            <FaUser className="hover:text-gray-500 cursor-pointer text-3xl"  />
+          </div>
           <div className="relative">
             <IoBagOutline className="hover:text-gray-500 cursor-pointer text-3xl relative" />
             <span className="absolute bottom-0 right-0 bg-black text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
