@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import Newsletter from "../Components/NewsLetter";
 
 const Home = () => {
   return (
     <div>
-     <p>Home</p> 
+      <Newsletter />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
