@@ -3,7 +3,7 @@ import { IoBagOutline } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { assets } from "../assets/assets";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import ActiveLink from "../Components/ActiveLink/ActiveLink";
 import { useState } from "react";
 import { RxDropdownMenu } from "react-icons/rx";
@@ -66,7 +66,7 @@ const Navbar = () => {
       </div>
       {/* sidebar menu for small screen */}
       <div
-        className={`absolute top-0 right-0 left-0 overflow-hidden bg-white transition-all ${
+        className={`absolute top-0 right-0 left-0 overflow-hidden bg-white transition-all cursor-pointer ${
           visible ? "w-full h-screen" : "w-0"
         }`}
       >
@@ -78,6 +78,21 @@ const Navbar = () => {
             <IoIosArrowBack className="hover:text-gray-500 cursor-pointer text-3xl sm:hidden rotate-180" />
             <p>Back</p>
           </div>
+          <NavLink onClick={() => setVisible(false)} to={"/"} className="hover:text-gray-500 py-6 pl-6 border ">
+            HOME
+          </NavLink>
+          <NavLink onClick={() => setVisible(false)} to={"/collection"} className="hover:text-gray-500 py-6 pl-6 border ">
+            COLLECTION
+          </NavLink>
+          <NavLink onClick={() => setVisible(false)} to={"/about"} className="hover:text-gray-500 py-6 pl-6 border ">
+            ABOUT
+          </NavLink>
+          <NavLink onClick={() => setVisible(false)} to={"/contact"} className="hover:text-gray-500 py-6 pl-6 border ">
+            CONTACT
+          </NavLink>
+          <button className="border rounded-full px-4 font-medium text-sm hover:bg-gray-100 py-6 pl-6 ">
+            Admin Panel
+          </button>
         </div>
       </div>
     </div>

@@ -3,12 +3,3 @@
     position: relative;
   }
   
-  .active::before {
-    content: "";
-    position: absolute;
-    border-bottom: 2px solid black;
-    width: 60%; /* Ensure the border spans the width of the link */
-    bottom: -1px; /* Adjust this as needed to position the border under the text */
-    left: 10px;
-  }
-  
