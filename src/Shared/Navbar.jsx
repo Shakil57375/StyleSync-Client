@@ -5,9 +5,13 @@ import { MdOutlineMenuOpen } from "react-icons/md";
 import { assets } from "../assets/assets";
 import { Link } from "react-router-dom";
 import ActiveLink from "../Components/ActiveLink/ActiveLink";
+import { useState } from "react";
+import { RxDropdownMenu } from "react-icons/rx";
+import { IoIosArrowBack } from "react-icons/io";
 const Navbar = () => {
+  const [visible, setVisible] = useState(false);
   return (
-    <nav className="w-full py-8 flex items-center justify-between ">
+    <div className="w-full py-8 flex items-center justify-between ">
       {/* Logo */}
       <Link
         to={"/"}
@@ -34,21 +38,18 @@ const Navbar = () => {
           Admin Panel
         </button>
       </div>
-
-      {/* Admin Panel Button */}
       <div className="flex items-center space-x-6">
-
         {/* Icons */}
         <div className="flex items-center space-x-6">
           <CiSearch className="hover:text-gray-500 cursor-pointer text-3xl" />
           <div className="group relative">
-            <FaUser className="hover:text-gray-500 cursor-pointer text-3xl"  />
+            <FaUser className="hover:text-gray-500 cursor-pointer text-3xl" />
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
-                <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
-                    <p className="cursor-pointer hover:text-black">My Profile</p>
-                    <p className="cursor-pointer hover:text-black">Orders</p>
-                    <p className="cursor-pointer hover:text-black">Logout</p>
-                </div>
+              <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
+                <p className="cursor-pointer hover:text-black">My Profile</p>
+                <p className="cursor-pointer hover:text-black">Orders</p>
+                <p className="cursor-pointer hover:text-black">Logout</p>
+              </div>
             </div>
           </div>
           <Link to={"/cart"} className="relative">
@@ -57,10 +58,29 @@ const Navbar = () => {
               5
             </span>
           </Link>
-          <MdOutlineMenuOpen className="hover:text-gray-500 cursor-pointer text-3xl" />
+          <MdOutlineMenuOpen
+            onClick={() => setVisible(true)}
+            className="hover:text-gray-500 cursor-pointer text-3xl sm:hidden"
+          />
         </div>
       </div>
-    </nav>
+      {/* sidebar menu for small screen */}
+      <div
+        className={`absolute top-0 right-0 left-0 overflow-hidden bg-white transition-all ${
+          visible ? "w-full h-screen" : "w-0"
+        }`}
+      >
+        <div className="flex flex-col text-gray-600">
+          <div
+            onClick={() => setVisible(false)}
+            className="flex items-center gap-4 p-3"
+          >
+            <IoIosArrowBack className="hover:text-gray-500 cursor-pointer text-3xl sm:hidden rotate-180" />
+            <p>Back</p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
