@@ -1,11 +1,10 @@
-// src/components/BlogCarousel.jsx
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./carouselOverride.css"; // Import custom CSS to override slick styles
 import { Link } from "react-router-dom";
 import { assets } from "../assets/assets";
-const BlogCarousel = () => {
+const Hero = () => {
     const settings = {
         dots: true,
         infinite: true,
@@ -49,4 +48,4 @@ const BlogCarousel = () => {
     );
 };
 
-export default BlogCarousel;
+export default Hero;

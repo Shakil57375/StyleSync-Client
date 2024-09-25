@@ -21,8 +21,8 @@ const Navbar = () => {
       </Link>
 
       {/* Navigation Links */}
-      <div className=" hidden space-x-8 text-sm font-medium lg:items-center  lg:flex">
-        <ActiveLink to={"/"} className="hover:text-gray-500">
+      <div className=" hidden space-x-8 text-sm font-medium lg:items-center  lg:flex Playwrite">
+        <ActiveLink to={"/"} className="hover:text-gray-500 ">
           HOME
         </ActiveLink>
         <ActiveLink to={"/collection"} className="hover:text-gray-500">
@@ -70,7 +70,7 @@ const Navbar = () => {
           visible ? "w-full h-screen" : "w-0"
         } z-50`}
       >
-        <div className="flex flex-col text-gray-600">
+        <div className="flex flex-col text-gray-600 Playwrite"> 
           <div
             onClick={() => setVisible(false)}
             className="flex items-center gap-4 p-3"
