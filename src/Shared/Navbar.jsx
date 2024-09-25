@@ -68,7 +68,7 @@ const Navbar = () => {
       <div
         className={`absolute top-0 right-0 left-0 overflow-hidden bg-white transition-all cursor-pointer ${
           visible ? "w-full h-screen" : "w-0"
-        }`}
+        } z-50`}
       >
         <div className="flex flex-col text-gray-600">
           <div
