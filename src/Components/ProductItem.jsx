@@ -61,10 +61,11 @@ const ProductItem = ({ product }) => {
                     <h5 className="text-xl tracking-tight text-slate-900">{product.name}</h5>
                     <div className="mt-2 mb-5 flex items-center justify-between">
                         <p>
-                            <span className="text-3xl font-bold text-slate-900">{currency}{product.price}</span>
-                            {product.originalPrice && (
-                                <span className="text-sm text-slate-900 line-through">
-                                    {currency}{product.originalPrice}
+                            <span className="text-3xl font-bold text-slate-900">{currency}{product.discountPrice}</span>
+                            
+                            {product.price && (
+                                <span className="text-sm text-slate-900 line-through ml-2">
+                                    {currency}{product.price}
                                 </span>
                             )}
                         </p>

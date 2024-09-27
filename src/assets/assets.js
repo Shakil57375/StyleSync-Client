@@ -29,11 +29,10 @@ import w_b_1_2 from "./w-b-1-2.webp";
 import w_b_1_3 from "./w-b-1-3.webp";
 import w_b_1_4 from "./w-b-1-4.webp";
 import w_b_1_5 from "./w-b-1-5.webp";
-import w_wc_1_1 from "./w-wc-1-1.webp";
-import w_wc_1_2 from "./w-wc-1-2.webp";
-import w_wc_1_3 from "./w-wc-1-3.webp";
-import w_wc_1_4 from "./w-wc-1-4.webp";
-import w_wc_1_5 from "./w-wc-1-5.webp";
+import w_wc_1_1 from "./w-wc-1-1.jpg";
+import w_wc_1_2 from "./w-wc-1-2.jpg";
+import w_wc_1_3 from "./w-wc-1-3.jpg";
+import w_wc_1_4 from "./w-wc-1-4.jpg";
 import k_ss_1_1 from "./k-ss-1-1.webp";
 import k_ss_1_2 from "./k-ss-1-2.webp";
 import k_ss_1_3 from "./k-ss-1-3.webp";
@@ -90,7 +89,6 @@ export const assets = {
   w_wc_1_2,
   w_wc_1_3,
   w_wc_1_4,
-  w_wc_1_5,
   k_ss_1_1,
   k_ss_1_2,
   k_ss_1_3,
@@ -145,7 +143,7 @@ export const products = [
     description: "Warm and stylish women's coat, perfect for winter wear.",
     price: 210,
     discountPrice: 190, // added discount price
-    images: [w_wc_1_1, w_wc_1_2, w_wc_1_3, w_wc_1_4, w_wc_1_5],
+    images: [w_wc_1_1, w_wc_1_2, w_wc_1_3, w_wc_1_4],
     category: "Women",
     subCategory: "Winterware",
     sizes: ["S", "M", "L"],
