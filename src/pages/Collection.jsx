@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { IoIosArrowDown } from "react-icons/io";
+import Title from "../Components/Title";
 
 const Collection = () => {
   const { prodcuts } = useContext(ShopContext);
@@ -9,8 +10,14 @@ const Collection = () => {
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
       {/* filter Options */}
       <div className="min-w-60">
-        <p onClick={() => setShowFilter(!showFilter)} className="my-2 text-xl flex items-center cursor-pointer gap-2">
-          FILTERS <IoIosArrowDown className={`text-2xl sm:hidden ${showFilter ? "rotate-180" : ""}`} />
+        <p
+          onClick={() => setShowFilter(!showFilter)}
+          className="my-2 text-xl flex items-center cursor-pointer gap-2"
+        >
+          FILTERS{" "}
+          <IoIosArrowDown
+            className={`text-2xl sm:hidden ${showFilter ? "rotate-180" : ""}`}
+          />
         </p>
         {/* Category Filter */}
         <div
@@ -31,7 +38,7 @@ const Collection = () => {
             </p>
           </div>
         </div>
-        
+
         {/* Sub Category Filter */}
         <div
           className={`border border-gray-300 pl-5 my-5 py-3 sm:block ${
@@ -61,6 +68,12 @@ const Collection = () => {
               Summerware
             </p>
           </div>
+        </div>
+      </div>
+      {/* Right Side */}
+      <div className="flex-1">
+        <div className="flex justify-between text-base sm:text-2xl mb-4">
+          <Title title={"Collections"} subtitle={"Checkout our collections"}></Title>
         </div>
       </div>
     </div>
