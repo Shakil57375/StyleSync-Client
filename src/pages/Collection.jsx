@@ -1,15 +1,16 @@
 import React, { useContext, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
+import { IoIosArrowDown } from "react-icons/io";
 
 const Collection = () => {
   const { prodcuts } = useContext(ShopContext);
-  const [showFilter, setShowFilter] = useState(false);
+  const [showFilter, setShowFilter] = useState(true);
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
       {/* filter Options */}
       <div className="min-w-60">
         <p className="my-2 text-xl flex items-center cursor-pointer gap-2">
-          FILTERS
+          FILTERS <IoIosArrowDown className={`h-3 sm:hidden ${showFilter ? "rotate-180" : ""}`} />
         </p>
         {/* Category Filter */}
         <div
