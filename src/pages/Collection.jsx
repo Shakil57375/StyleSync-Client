@@ -44,19 +44,19 @@ const Collection = () => {
     setFilteredProducts(productsCopy)
   }
 
-  // Initialize products on load
-  useEffect(() => {
-    setFilteredProducts(products);
-  }, [products]);
+  // // Initialize products on load
+  // useEffect(() => {
+  //   setFilteredProducts(products);
+  // }, [products]);
 
-  // Debugging: Log selected categories and subcategories
-  useEffect(() => {
-    console.log("Selected Categories:", selectedCategories);
-  }, [selectedCategories]);
+  // // Debugging: Log selected categories and subcategories
+  // useEffect(() => {
+  //   console.log("Selected Categories:", selectedCategories);
+  // }, [selectedCategories]);
 
-  useEffect(() => {
-    console.log("Selected SubCategories:", selectedSubCategories);
-  }, [selectedSubCategories]);
+  // useEffect(() => {
+  //   console.log("Selected SubCategories:", selectedSubCategories);
+  // }, [selectedSubCategories]);
 
   useEffect(()=>{
     applyFilter()
