@@ -5,11 +5,13 @@ import { MdOutlineMenuOpen } from "react-icons/md";
 import { assets } from "../assets/assets";
 import { Link, NavLink } from "react-router-dom";
 import ActiveLink from "../Components/ActiveLink/ActiveLink";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { RxDropdownMenu } from "react-icons/rx";
 import { IoIosArrowBack } from "react-icons/io";
+import { ShopContext } from "../context/ShopContext";
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
+  const { setShowSearch } = useContext(ShopContext);
   return (
     <div className="w-full py-8 flex items-center justify-between ">
       {/* Logo */}
@@ -41,7 +43,10 @@ const Navbar = () => {
       <div className="flex items-center space-x-6">
         {/* Icons */}
         <div className="flex items-center space-x-6">
-          <CiSearch className="hover:text-gray-500 cursor-pointer text-3xl" />
+          <CiSearch
+            onClick={() => setShowSearch(true)}
+            className="hover:text-gray-500 cursor-pointer text-3xl"
+          />
           <div className="group relative">
             <FaUser className="hover:text-gray-500 cursor-pointer text-3xl" />
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
@@ -70,7 +75,7 @@ const Navbar = () => {
           visible ? "w-full h-screen" : "w-0"
         } z-50`}
       >
-        <div className="flex flex-col text-gray-600 Playwrite"> 
+        <div className="flex flex-col text-gray-600 Playwrite">
           <div
             onClick={() => setVisible(false)}
             className="flex items-center gap-4 p-3"
@@ -78,16 +83,32 @@ const Navbar = () => {
             <IoIosArrowBack className="hover:text-gray-500 cursor-pointer text-3xl sm:hidden rotate-180" />
             <p>Back</p>
           </div>
-          <NavLink onClick={() => setVisible(false)} to={"/"} className="hover:text-gray-500 py-6 pl-6 border ">
+          <NavLink
+            onClick={() => setVisible(false)}
+            to={"/"}
+            className="hover:text-gray-500 py-6 pl-6 border "
+          >
             HOME
           </NavLink>
-          <NavLink onClick={() => setVisible(false)} to={"/collection"} className="hover:text-gray-500 py-6 pl-6 border ">
+          <NavLink
+            onClick={() => setVisible(false)}
+            to={"/collection"}
+            className="hover:text-gray-500 py-6 pl-6 border "
+          >
             COLLECTION
           </NavLink>
-          <NavLink onClick={() => setVisible(false)} to={"/about"} className="hover:text-gray-500 py-6 pl-6 border ">
+          <NavLink
+            onClick={() => setVisible(false)}
+            to={"/about"}
+            className="hover:text-gray-500 py-6 pl-6 border "
+          >
             ABOUT
           </NavLink>
-          <NavLink onClick={() => setVisible(false)} to={"/contact"} className="hover:text-gray-500 py-6 pl-6 border ">
+          <NavLink
+            onClick={() => setVisible(false)}
+            to={"/contact"}
+            className="hover:text-gray-500 py-6 pl-6 border "
+          >
             CONTACT
           </NavLink>
           <button className="border rounded-full px-4 font-medium text-sm hover:bg-gray-100 py-6 pl-6 ">
