@@ -33,6 +33,17 @@ const Collection = () => {
     );
   };
 
+  const applyFilter = () =>{
+    let productsCopy = products.slice()
+    if(selectedCategories.length > 0){
+      productsCopy = productsCopy.filter(item => selectedCategories.includes(item.category))
+    }
+    if(selectedSubCategories.length > 0){
+      productsCopy = productsCopy.filter(item => selectedSubCategories.includes(item.subCategory))
+    }
+    setFilteredProducts(productsCopy)
+  }
+
   // Initialize products on load
   useEffect(() => {
     setFilteredProducts(products);
@@ -46,6 +57,10 @@ const Collection = () => {
   useEffect(() => {
     console.log("Selected SubCategories:", selectedSubCategories);
   }, [selectedSubCategories]);
+
+  useEffect(()=>{
+    applyFilter()
+  },[selectedCategories, selectedSubCategories])
 
   return (
     <div className="flex flex-col justify-between items-start sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
