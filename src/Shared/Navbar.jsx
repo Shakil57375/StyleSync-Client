@@ -6,7 +6,6 @@ import { assets } from "../assets/assets";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import ActiveLink from "../Components/ActiveLink/ActiveLink";
 import { useContext, useState } from "react";
-import { RxDropdownMenu } from "react-icons/rx";
 import { IoIosArrowBack } from "react-icons/io";
 import { ShopContext } from "../context/ShopContext";
 const Navbar = () => {
@@ -14,6 +13,8 @@ const Navbar = () => {
   const { setShowSearch } = useContext(ShopContext);
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Function to handle search icon click
   const handleSearchClick = () => {
     if (!location.pathname.startsWith("/collection")) {
       navigate("/collection"); // Redirect to /collection route

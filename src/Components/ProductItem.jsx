@@ -43,7 +43,7 @@ const ProductItem = ({ product }) => {
 
     return (
         <Link to={`/product/${product?._id}`} className="text-gray-700 cursor-pointer">
-            <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
+            <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md  ">
                 <div className="relative mx-3 mt-3 h-60 overflow-hidden rounded-xl">
                     <Slider {...settings}>
                         {product.images?.map((image, index) => (
@@ -51,7 +51,7 @@ const ProductItem = ({ product }) => {
                                 <img
                                     src={image}
                                     alt={`Product ${index + 1}`}
-                                    className="object-cover h-[300px] w-[450px] rounded-lg"
+                                    className="object-cover h-[300px] w-[450px] rounded-lg transition duration-500 hover:scale-125"
                                 />
                             </div>
                         ))}

@@ -5,56 +5,29 @@ import { BiSearch } from "react-icons/bi";
 import { useLocation } from "react-router-dom";
 
 const SearchBar = () => {
-  const { search, setSearch, showSearch, setShowSearch } = useContext(ShopContext);
-  const location = useLocation();
-  const [visible, setVisible] = useState(false);
+  const { search, setSearch, showSearch, setShowSearch } =
+    useContext(ShopContext);
+    const [visible, setVisible] = useState(false);
+    const location = useLocation()
 
-  // Check if the current route is 'collection'
-  useEffect(() => {
-    if (location.pathname.startsWith("/collection")) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-      setShowSearch(false); // Ensure modal is closed when not in the collection route
-    }
-  }, [location, setShowSearch]);
+    useEffect(()=>{
+        if(location.pathname.includes("collection")){
+            setVisible(true)
+        }else{
+            setVisible(false)
+        }
+    },[location])
+    
 
-  // Don't render the search bar modal if not on the collection route
-  if (!visible) {
-    return null;
-  }
-
-  return (
-    <div>
-      {/* Search modal */}
-      <div
-        className={`fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 backdrop-blur-sm z-50 transition-all duration-300 ${
-          showSearch ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
-      >
-        <div
-          className={`bg-white rounded-lg p-5 shadow-lg w-11/12 sm:w-1/2 lg:w-1/3 transition-transform transform duration-300 ease-in-out ${
-            showSearch ? "translate-y-0" : "-translate-y-10"
-          }`}
-        >
-          <div className="flex items-center justify-between">
-            <input
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="flex-1 outline-none bg-inherit text-sm p-2 border-b border-gray-400"
-              type="text"
-              placeholder="Search for products"
-            />
-            <BiSearch className="w-5 h-5 ml-2 text-gray-500" />
-            <CgClose
-              onClick={() => setShowSearch(false)}
-              className="ml-3 cursor-pointer w-5 h-5 text-gray-500"
-            />
-          </div>
+  return showSearch && visible ?  (
+    <div className="border-t border-b bg-gray-50 text-center transition duration-100">
+        <div className="inline-flex items-center justify-center border border-gray-400 px-5 py-2 my-5 mx-3 rounded-full w-3/4 sm:w-1/2">
+            <input value={search} onChange={(e) => setSearch(e.target.value)} className="flex-1 outline-none bg-inherit text-sm" type="text" placeholder="search" />
+            <BiSearch  className="w-4"/>
         </div>
-      </div>
-    </div>
-  );
+        <CgClose onClick={() => setShowSearch(false)} className="inline w-3 cursor-pointer"/>
+    </div> 
+  ) : null;
 };
 
 export default SearchBar;
