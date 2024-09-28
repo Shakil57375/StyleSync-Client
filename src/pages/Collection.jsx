@@ -5,12 +5,12 @@ import Title from "../Components/Title";
 import ProductItem from "../Components/ProductItem";
 
 const Collection = () => {
-  const { products } = useContext(ShopContext);
+  const { products, search, showSearch } = useContext(ShopContext);
   const [showFilter, setShowFilter] = useState(false);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedSubCategories, setSelectedSubCategories] = useState([]);
-  const [sortType, setSortType] = useState("relevant")
+  const [sortType, setSortType] = useState("relevant");
   // Toggle selection for categories
   const handleCategoryChange = (e) => {
     const category = e.target.value;
@@ -33,54 +33,50 @@ const Collection = () => {
     );
   };
 
-  const applyFilter = () =>{
-    let productsCopy = products.slice()
-    if(selectedCategories.length > 0){
-      productsCopy = productsCopy.filter(item => selectedCategories.includes(item.category))
-    }
-    if(selectedSubCategories.length > 0){
-      productsCopy = productsCopy.filter(item => selectedSubCategories.includes(item.subCategory))
-    }
-    setFilteredProducts(productsCopy)
-  }
+  const applyFilter = () => {
+    let productsCopy = products.slice();
 
-  const sortProduct = () =>{
+    if (showSearch && search) {
+      productsCopy = productsCopy.filter((item) =>
+        item.name.toLowerCase().includes(search.toLowerCase())
+    );
+    }
+
+    if (selectedCategories.length > 0) {
+      productsCopy = productsCopy.filter((item) =>
+        selectedCategories.includes(item.category)
+      );
+    }
+    if (selectedSubCategories.length > 0) {
+      productsCopy = productsCopy.filter((item) =>
+        selectedSubCategories.includes(item.subCategory)
+      );
+    }
+    setFilteredProducts(productsCopy);
+  };
+
+  const sortProduct = () => {
     let fpCopy = filteredProducts.slice();
-    switch(sortType){
-      case "low-high" : 
-        setFilteredProducts(fpCopy.sort((a,b)=>(a.price - b.price)))
+    switch (sortType) {
+      case "low-high":
+        setFilteredProducts(fpCopy.sort((a, b) => a.price - b.price));
         break;
-      case "high-low" :
-        setFilteredProducts(fpCopy.sort((a,b)=>(b.price - a.price)))
+      case "high-low":
+        setFilteredProducts(fpCopy.sort((a, b) => b.price - a.price));
         break;
-      
+
       default:
         applyFilter();
         break;
     }
-  }
+  };
+  useEffect(() => {
+    applyFilter();
+  }, [selectedCategories, selectedSubCategories, search, showSearch]);
 
-  // // Initialize products on load
-  // useEffect(() => {
-  //   setFilteredProducts(products);
-  // }, [products]);
-
-  // // Debugging: Log selected categories and subcategories
-  // useEffect(() => {
-  //   console.log("Selected Categories:", selectedCategories);
-  // }, [selectedCategories]);
-
-  // useEffect(() => {
-  //   console.log("Selected SubCategories:", selectedSubCategories);
-  // }, [selectedSubCategories]);
-
-  useEffect(()=>{
-    applyFilter()
-  },[selectedCategories, selectedSubCategories])
-
-  useEffect(()=>{
-    sortProduct()
-  },[sortType])
+  useEffect(() => {
+    sortProduct();
+  }, [sortType]);
 
   return (
     <div className="flex flex-col justify-between items-start sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
@@ -187,7 +183,10 @@ const Collection = () => {
       <div className="basis-10/12">
         <div className="flex justify-between items-center text-base sm:text-2xl mb-4">
           <Title title="All Collections" subtitle="Checkout our collections" />
-          <select onChange={(e)=>setSortType(e.target.value)} className="border-2 border-gray-300 text-sm px-2 h-8">
+          <select
+            onChange={(e) => setSortType(e.target.value)}
+            className="border-2 border-gray-300 text-sm px-2 h-8"
+          >
             <option value="relevant">Sort by: Relevant</option>
             <option value="low-high">Sort by: Low to High</option>
             <option value="high-low">Sort by: High to Low</option>

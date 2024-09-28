@@ -3,7 +3,7 @@ import { IoBagOutline } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { assets } from "../assets/assets";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import ActiveLink from "../Components/ActiveLink/ActiveLink";
 import { useContext, useState } from "react";
 import { RxDropdownMenu } from "react-icons/rx";
@@ -12,6 +12,14 @@ import { ShopContext } from "../context/ShopContext";
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const { setShowSearch } = useContext(ShopContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const handleSearchClick = () => {
+    if (!location.pathname.startsWith("/collection")) {
+      navigate("/collection"); // Redirect to /collection route
+    }
+    setShowSearch(true); // Open the search modal
+  };
   return (
     <div className="w-full py-8 flex items-center justify-between ">
       {/* Logo */}
@@ -43,10 +51,12 @@ const Navbar = () => {
       <div className="flex items-center space-x-6">
         {/* Icons */}
         <div className="flex items-center space-x-6">
-          <CiSearch
-            onClick={() => setShowSearch(true)}
-            className="hover:text-gray-500 cursor-pointer text-3xl"
-          />
+          <span onClick={handleSearchClick}>
+            <CiSearch
+              onClick={() => setShowSearch(true)}
+              className="hover:text-gray-500 cursor-pointer text-3xl"
+            />
+          </span>
           <div className="group relative">
             <FaUser className="hover:text-gray-500 cursor-pointer text-3xl" />
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
