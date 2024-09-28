@@ -81,6 +81,7 @@ const Collection = () => {
             <option value="high-low">Sort By : High to Low</option>
           </select>
         </div>
+
       </div>
     </div>
   );
