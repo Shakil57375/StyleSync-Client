@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import { FaStar } from "react-icons/fa6";
+import { BsStarHalf } from "react-icons/bs";
 
 const Product = () => {
   const { productId } = useParams();
@@ -52,7 +53,8 @@ const Product = () => {
             <FaStar className="text-yellow-500 text-xl"/>
             <FaStar className="text-yellow-500 text-xl"/>
             <FaStar className="text-yellow-500 text-xl"/>
-            <FaStar className="text-yellow-500 text-xl"/>
+            <BsStarHalf className="text-yellow-500 text-xl"/>
+            <p>(111)</p>
           </div>
         </div>
       </div>
