@@ -105,7 +105,7 @@ export const assets = {
   k_wc_1_4,
 };
 
-export const products = [
+export const const products = [
   {
     _id: 1232148668544,
     name: "Women's abaya with niqab",
@@ -120,6 +120,8 @@ export const products = [
     bestseller: true,
     latest: false,
     trending: true,
+    rating: 4.5, // average rating
+    ratingCount: 350, // number of ratings
   },
   {
     _id: 1232148668545,
@@ -136,6 +138,8 @@ export const products = [
     bestseller: false,
     latest: true,
     trending: false,
+    rating: 4.0, // average rating
+    ratingCount: 210, // number of ratings
   },
   {
     _id: 1232148668546,
@@ -151,6 +155,8 @@ export const products = [
     bestseller: true,
     latest: false,
     trending: true,
+    rating: 4.8, // average rating
+    ratingCount: 500, // number of ratings
   },
   {
     _id: 1232148668547,
@@ -167,6 +173,8 @@ export const products = [
     bestseller: false,
     latest: true,
     trending: true,
+    rating: 3.7, // average rating
+    ratingCount: 180, // number of ratings
   },
   {
     _id: 1232148668548,
@@ -182,6 +190,8 @@ export const products = [
     bestseller: true,
     latest: false,
     trending: false,
+    rating: 4.6, // average rating
+    ratingCount: 420, // number of ratings
   },
   {
     _id: 1232148668549,
@@ -197,6 +207,8 @@ export const products = [
     bestseller: false,
     latest: true,
     trending: true,
+    rating: 4.2, // average rating
+    ratingCount: 300, // number of ratings
   },
   {
     _id: 1232148668551,
@@ -212,6 +224,8 @@ export const products = [
     bestseller: false,
     latest: true,
     trending: false,
+    rating: 3.9, // average rating
+    ratingCount: 150, // number of ratings
   },
   {
     _id: 1232148668552,
@@ -227,5 +241,7 @@ export const products = [
     bestseller: false,
     latest: true,
     trending: true,
+    rating: 4.4, // average rating
+    ratingCount: 250, // number of ratings
   }
 ];
