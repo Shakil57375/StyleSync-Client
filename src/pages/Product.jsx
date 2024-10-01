@@ -52,15 +52,17 @@ const Product = () => {
         <div className="flex-1">
           <h1 className="font-medium text-2xl mt-2">{productData.name}</h1>
           <div className="flex items-center gap-1 mt-2">
-            <Rating style={{ maxWidth: 150 }}  value={productData.rating}/>
+            <Rating style={{ maxWidth: 150 }} readOnly value={productData.rating}/>
             <p>({productData.ratingCount})</p>
           </div>
           <p className="mmt-5 text-3xl font-medium">{currency} {productData.price}</p>
           <p className="mt-5 text-gray-500 md:w-4/5">{productData.description}</p>
           <div className="flex flex-col gap-4 my-8">
-            <p>Select Size</p>
+            <p className="text-green-600 font-medium">Select Size</p>
             <div className="flex gap-2">
-
+                {productData.sizes.map((productSize)=>(
+                  <button className="btn btn-outline btn-success" key={productSize}>{productSize}</button>
+                ))}
             </div>
           </div>
         </div>
