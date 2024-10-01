@@ -105,7 +105,7 @@ export const assets = {
   k_wc_1_4,
 };
 
-export const const products = [
+export const products = [
   {
     _id: 1232148668544,
     name: "Women's abaya with niqab",

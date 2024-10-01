@@ -2,11 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import { FaStar } from "react-icons/fa6";
-import { BsStarHalf } from "react-icons/bs";
-
+import { BsArrowRight, BsStarHalf } from "react-icons/bs";
+import '@smastrom/react-rating/style.css'
+import { Rating } from "@smastrom/react-rating";
 const Product = () => {
   const { productId } = useParams();
-  const { products } = useContext(ShopContext);
+  const { products,currency } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [Image, setImage] = useState("");
   const fetchProductData = () => {
@@ -30,15 +31,17 @@ const Product = () => {
       <div className="flex gap-12 flex-col sm:flex-row ">
         {/* Product Images */}
         <div className="flex-1 flex flex-col-reverse sm:flex-row gap-2">
-          <div className="flex lg:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal lg:w-36 w-full">
+          <div className="flex lg:flex-col overflow-x-auto  justify-between sm:justify-normal lg:w-36 w-full">
             {productData.images.map((image) => (
-              <img
+              <div key={image}>
+                <img
                 onClick={() => setImage(image)}
                 className="lg:w-36 w-full sm:mb-3 flex-shrink-0 cursor-pointer"
                 src={image}
-                key={image}
+                
                 alt=""
               />
+              </div>
             ))}
           </div>
           <div className="w-full lg:w-[80%]">
@@ -49,13 +52,11 @@ const Product = () => {
         <div className="flex-1">
           <h1 className="font-medium text-2xl mt-2">{productData.name}</h1>
           <div className="flex items-center gap-1 mt-2">
-            <FaStar className="text-yellow-500 text-xl"/>
-            <FaStar className="text-yellow-500 text-xl"/>
-            <FaStar className="text-yellow-500 text-xl"/>
-            <FaStar className="text-yellow-500 text-xl"/>
-            <BsStarHalf className="text-yellow-500 text-xl"/>
-            <p>(111)</p>
+            <Rating style={{ maxWidth: 150 }}  value={productData.rating}/>
+            <p>({productData.ratingCount})</p>
           </div>
+          <p className="mmt-5 text-3xl font-medium">{currency} {productData.price}</p>
+          <p className="mt-5 text-gray-500 md:w-4/5">{productData.description}</p>
         </div>
       </div>
     </div>
