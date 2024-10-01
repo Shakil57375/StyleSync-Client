@@ -36,7 +36,7 @@ const Product = () => {
               <div key={image}>
                 <img
                 onClick={() => setImage(image)}
-                className="lg:w-36 w-full md:w-[100px] lg:h-full md:h-[100px] h-[70px] sm:mb-3 flex-shrink-0 cursor-pointer"
+                className=" w-full md:w-[100px] lg:h-[120px] lg:w-[130px] md:h-[100px] h-[70px] sm:mb-3 flex-shrink-0 cursor-pointer"
                 src={image}
                 
                 alt=""
@@ -57,6 +57,12 @@ const Product = () => {
           </div>
           <p className="mmt-5 text-3xl font-medium">{currency} {productData.price}</p>
           <p className="mt-5 text-gray-500 md:w-4/5">{productData.description}</p>
+          <div className="flex flex-col gap-4 my-8">
+            <p>Select Size</p>
+            <div className="flex gap-2">
+
+            </div>
+          </div>
         </div>
       </div>
     </div>
