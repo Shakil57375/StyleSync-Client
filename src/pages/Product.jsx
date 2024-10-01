@@ -36,7 +36,7 @@ const Product = () => {
               <div key={image}>
                 <img
                 onClick={() => setImage(image)}
-                className="lg:w-36 w-full lg:h-full md:h-auto h-[70px] sm:mb-3 flex-shrink-0 cursor-pointer"
+                className="lg:w-36 w-full md:w-[100px] lg:h-full md:h-[100px] h-[70px] sm:mb-3 flex-shrink-0 cursor-pointer"
                 src={image}
                 
                 alt=""
@@ -44,7 +44,7 @@ const Product = () => {
               </div>
             ))}
           </div>
-          <div className="w-full h-full  lg:w-[80%]">
+          <div className="w-full h-full md:h-[400px] md:w-[80%] lg:w-[80%]">
             <img className="w-full h-auto " src={Image} alt="" />
           </div>
         </div>
