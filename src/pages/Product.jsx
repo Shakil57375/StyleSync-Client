@@ -81,9 +81,7 @@ const Product = () => {
               ))}
             </div>
           </div>
-          <button
-            class="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md"
-          >
+          <button class="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
             <span class="w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05] absolute"></span>
             <span class="relative px-6 py-3 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400">
               <span class="relative text-white">Add to cart</span>
@@ -91,10 +89,17 @@ const Product = () => {
           </button>
           <hr className="mt-8 sm:w-4/5" />
           <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
-              <p>100% Original product.</p>
-              <p>Cash on delivery is available on this product</p>
-              <p>Easy return and exchange policy within 7 days</p>
+            <p>100% Original product.</p>
+            <p>Cash on delivery is available on this product</p>
+            <p>Easy return and exchange policy within 7 days</p>
           </div>
+        </div>
+      </div>
+      {/* Description and review section */}
+      <div className="mt-20">
+        <div className="flex">
+          <b className="border px-5 py-3 text-sm">Description</b>
+          <p className="border px-5 py-3 text-sm">Review (122)</p>
         </div>
       </div>
     </div>
