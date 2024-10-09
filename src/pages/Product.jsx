@@ -106,6 +106,10 @@ const Product = () => {
           <p>An e-commerce website typically showcases products or services with detailed descriptions, images, prices, and options such as different sizes or colors. Each product usually has its own dedicated page, providing all the necessary information to help customers make informed purchasing decisions.</p>
         </div>
       </div>
+      {/* Display related products */}
+      <div>
+
+      </div>
     </div>
   ) : (
     <div className="opacity-0"></div>
