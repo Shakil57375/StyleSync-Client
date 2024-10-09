@@ -5,6 +5,7 @@ import { FaStar } from "react-icons/fa6";
 import { BsArrowRight, BsStarHalf } from "react-icons/bs";
 import "@smastrom/react-rating/style.css";
 import { Rating } from "@smastrom/react-rating";
+import RelatedProducts from "../Components/RelatedProducts";
 const Product = () => {
   const { productId } = useParams();
   const { products, currency } = useContext(ShopContext);
@@ -107,9 +108,8 @@ const Product = () => {
         </div>
       </div>
       {/* Display related products */}
-      <div>
 
-      </div>
+      <RelatedProducts category={productData.category} subCategory={productData.subCategory}/>
     </div>
   ) : (
     <div className="opacity-0"></div>
