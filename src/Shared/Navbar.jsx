@@ -1,4 +1,4 @@
-import { FaUser } from "react-icons/fa";
+import { FaHeart, FaUser } from "react-icons/fa";
 import { IoBagOutline } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import { MdOutlineMenuOpen } from "react-icons/md";
@@ -68,6 +68,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
+          <Link to={"/wishlist"}><FaHeart className="text-red-500 text-2xl" /></Link>
           <Link to={"/cart"} className="relative">
             <IoBagOutline className="hover:text-gray-500 cursor-pointer text-3xl relative" />
             <span className="absolute bottom-0 right-0 bg-black text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
