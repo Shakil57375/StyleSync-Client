@@ -8,7 +8,7 @@ import { Rating } from "@smastrom/react-rating";
 import RelatedProducts from "../Components/RelatedProducts";
 const Product = () => {
   const { productId } = useParams();
-  const { products, currency, cartItems, addToCart } = useContext(ShopContext);
+  const { products, currency,addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [Image, setImage] = useState("");
   const [Size, setSize] = useState("");
