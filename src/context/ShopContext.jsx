@@ -8,54 +8,48 @@ const ShopContextProvider = ({ children }) => {
   const delivery_fee = 10;
   const [search, setSearch] = useState("");
   const [showSearch, setShowSearch] = useState(false);
-  const [cartItems, setCartItems] = useState({})
-  // const addToCart = async (itemId, size) => {
-  //   let cartData = structuredClone(cartItems)
-  //   if(cartData[itemId]){
-  //     if(cartData[itemId]){
-  //       cartData[itemId][size]++
-  //     }
-  //     else{
-  //       cartData[itemId][size]= 1
-  //     }
-  //   }
-  //   else{
-  //     cartData[itemId] = {}
-  //     cartData[itemId][size] = 1
-  //   }
-  //   setCartItems(cartData)
-  // }
+  const [cartItems, setCartItems] = useState({});
+  const [wishList, setWishList] = useState({});
 
   const addToCart = async (itemId, size) => {
-    if(!size){
-      toast.error("Please select a size")
+    if (!size) {
+      toast.error("Please select a size");
       return;
     }
     let cartData = structuredClone(cartItems);
     if (cartData[itemId]) {
-      // Check if the size exists, otherwise, initialize it
       if (cartData[itemId][size]) {
-        cartData[itemId][size]++; // Increment quantity if size exists
+        cartData[itemId][size]++;
       } else {
-        cartData[itemId][size] = 1; // Initialize size if not present
-      }    
+        cartData[itemId][size] = 1;
+      }
     } else {
-      // Initialize item and size if product is not in cart
       cartData[itemId] = {};
       cartData[itemId][size] = 1;
     }
     setCartItems(cartData);
   };
-  
-  // Don't forget to update the cart state when the component re-renders
+
+  // Manage Wish List
+  const toggleWishList = (itemId) => {
+    let wishListData = structuredClone(wishList);
+    if (wishListData[itemId]) {
+      delete wishListData[itemId];
+      toast.error("Removed from Wish List");
+    } else {
+      wishListData[itemId] = true;
+      toast.success("Added to Wish List");
+    }
+    setWishList(wishListData);
+  };
+
   useEffect(() => {
     console.log(cartItems);
-  }, [cartItems]); // Add cartItems as a dependency to ensure it logs the latest changes
-  
+  }, [cartItems]);
 
-  useEffect(()=>{
-    console.log(cartItems)
-  },[])
+  useEffect(() => {
+    console.log(wishList);
+  }, [wishList]);
 
   const value = {
     products,
@@ -66,8 +60,11 @@ const ShopContextProvider = ({ children }) => {
     showSearch,
     setShowSearch,
     cartItems,
-    addToCart
+    addToCart,
+    wishList,
+    toggleWishList,
   };
+  
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
 };
 
