@@ -8,7 +8,7 @@ import { Rating } from "@smastrom/react-rating";
 import RelatedProducts from "../Components/RelatedProducts";
 const Product = () => {
   const { productId } = useParams();
-  const { products, currency } = useContext(ShopContext);
+  const { products, currency, cartItems, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [Image, setImage] = useState("");
   const [Size, setSize] = useState("");
@@ -22,6 +22,8 @@ const Product = () => {
       }
     });
   };
+
+  // 
 
   useEffect(() => {
     fetchProductData();
@@ -82,10 +84,13 @@ const Product = () => {
               ))}
             </div>
           </div>
-          <button class="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
-            <span class="w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05] absolute"></span>
-            <span class="relative px-6 py-3 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400">
-              <span class="relative text-white">Add to cart</span>
+          <button
+            onClick={() => addToCart(productData._id, Size)}
+            className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md"
+          >
+            <span className="w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05] absolute"></span>
+            <span className="relative px-6 py-3 transition-all ease-out bg-gray-900 rounded-md group-hover:bg-opacity-0 duration-400">
+              <span className="relative text-white">Add to cart</span>
             </span>
           </button>
           <hr className="mt-8 sm:w-4/5" />
@@ -103,13 +108,32 @@ const Product = () => {
           <p className="border px-5 py-3 text-sm">Review (122)</p>
         </div>
         <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
-          <p>An e-commerce website is a digital platform that enables the online buying and selling of products or services. Acting as a virtual storefront, it allows businesses and individuals to display their offerings, engage with customers, and complete transactions entirely online, eliminating the need for a physical store. The widespread appeal of e-commerce sites stems from the convenience they provide, their easy accessibility, and the ability to reach a global customer base. </p>
-          <p>An e-commerce website typically showcases products or services with detailed descriptions, images, prices, and options such as different sizes or colors. Each product usually has its own dedicated page, providing all the necessary information to help customers make informed purchasing decisions.</p>
+          <p>
+            An e-commerce website is a digital platform that enables the online
+            buying and selling of products or services. Acting as a virtual
+            storefront, it allows businesses and individuals to display their
+            offerings, engage with customers, and complete transactions entirely
+            online, eliminating the need for a physical store. The widespread
+            appeal of e-commerce sites stems from the convenience they provide,
+            their easy accessibility, and the ability to reach a global customer
+            base.{" "}
+          </p>
+          <p>
+            An e-commerce website typically showcases products or services with
+            detailed descriptions, images, prices, and options such as different
+            sizes or colors. Each product usually has its own dedicated page,
+            providing all the necessary information to help customers make
+            informed purchasing decisions.
+          </p>
         </div>
       </div>
       {/* Display related products */}
 
-      <RelatedProducts category={productData.category} subCategory={productData.subCategory} currentProductId = {productData._id}/>
+      <RelatedProducts
+        category={productData.category}
+        subCategory={productData.subCategory}
+        currentProductId={productData._id}
+      />
     </div>
   ) : (
     <div className="opacity-0"></div>
