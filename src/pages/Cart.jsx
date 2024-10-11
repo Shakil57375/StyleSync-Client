@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "../Components/Title";
+import { MdDelete } from "react-icons/md";
 
 const Cart = () => {
-  const { products, currency, cartItems } = useContext(ShopContext);
+  const { products, currency, cartItems, updateQuantity } = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
 
   useEffect(() => {
@@ -44,7 +45,7 @@ const Cart = () => {
              </div>
             </div>
             <input className="border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1" type="text" min={1} defaultValue={item.quantity} />
-            
+            <MdDelete onClick={() => updateQuantity(item._id, item.size, item.quantity)} className="mr-4 cursor-pointer text-2xl text-red-600"/>
           </div>
         );
       })}

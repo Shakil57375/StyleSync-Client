@@ -51,6 +51,16 @@ const ShopContextProvider = ({ children }) => {
     return totalCount;
   };
 
+  const updateQuantity = ({itemId, size, quantity}) => {
+    let cartData = structuredClone(cartItems)
+    cartData[itemId][size] = quantity;
+    setCartItems(cartData);
+    toast.info("Updated Cart", {
+      position: "top-center",
+      autoClose: 2000,
+    });
+  }
+
   // Manage Wish List
   const toggleWishList = (itemId) => {
     let wishListData = structuredClone(wishList);
@@ -91,6 +101,7 @@ const ShopContextProvider = ({ children }) => {
     wishList,
     toggleWishList,
     getCartCount,
+    updateQuantity
   };
 
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
