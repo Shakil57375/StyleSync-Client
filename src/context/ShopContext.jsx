@@ -51,15 +51,39 @@ const ShopContextProvider = ({ children }) => {
     return totalCount;
   };
 
-  const updateQuantity = ({itemId, size, quantity}) => {
-    let cartData = structuredClone(cartItems)
-    cartData[itemId][size] = quantity;
-    setCartItems(cartData);
-    toast.info("Updated Cart", {
-      position: "top-center",
-      autoClose: 2000,
+  const updateQuantity = (productId, size, newQuantity) => {
+    setCartItems((prevCartItems) => {
+      const updatedCartItems = { ...prevCartItems };
+  
+      // Check if product exists in cart
+      if (!updatedCartItems[productId]) {
+        console.error(`Product with id ${productId} not found`);
+        return prevCartItems;
+      }
+  
+      // Check if the size exists for this product
+      if (!updatedCartItems[productId][size]) {
+        console.error(`Size ${size} not found for product ${productId}`);
+        return prevCartItems;
+      }
+  
+      // If new quantity is 0, remove the size from the product
+      if (newQuantity === 0) {
+        delete updatedCartItems[productId][size];
+  
+        // If there are no more sizes for this product, remove the product from the cart
+        if (Object.keys(updatedCartItems[productId]).length === 0) {
+          delete updatedCartItems[productId];
+        }
+      } else {
+        // Otherwise, update the quantity
+        updatedCartItems[productId][size] = newQuantity;
+      }
+  
+      return updatedCartItems;
     });
-  }
+  };
+  
 
   // Manage Wish List
   const toggleWishList = (itemId) => {
