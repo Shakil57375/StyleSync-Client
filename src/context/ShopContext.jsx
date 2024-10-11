@@ -52,6 +52,13 @@ const ShopContextProvider = ({ children }) => {
     return totalCount;
   };
 
+  const getCartAmount = async () =>{
+    let totalAmount = 0;
+    for(const items in cartItems) {
+      let itemInfo = products.find((product) => product._id === items)
+    }
+  }
+
   const updateQuantity = (productId, size, newQuantity) => {
     setCartItems((prevCartItems) => {
       const updatedCartItems = { ...prevCartItems };
