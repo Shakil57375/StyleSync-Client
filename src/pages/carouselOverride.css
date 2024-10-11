@@ -1,0 +1,12 @@
+.slick-slide > div {
+    display: flex !important;
+}
+
+.custom-slider {
+    display: flex !important;
+}
+
+
+.slick-dots li.slick-active button:before {
+    color: rgb(169, 110, 0);
+  }

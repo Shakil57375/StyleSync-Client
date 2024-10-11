@@ -107,14 +107,6 @@ const ShopContextProvider = ({ children }) => {
     setWishList(wishListData);
   };
 
-  useEffect(() => {
-    console.log(cartItems);
-  }, [cartItems]);
-
-  useEffect(() => {
-    console.log(wishList);
-  }, [wishList]);
-
   const value = {
     products,
     currency,

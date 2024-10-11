@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
-import { FaStar } from "react-icons/fa6";
-import { BsArrowRight, BsStarHalf } from "react-icons/bs";
 import "@smastrom/react-rating/style.css";
 import { Rating } from "@smastrom/react-rating";
 import RelatedProducts from "../Components/RelatedProducts";
