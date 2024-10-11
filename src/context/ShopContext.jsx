@@ -66,6 +66,8 @@ const ShopContextProvider = ({ children }) => {
         console.error(`Size ${size} not found for product ${productId}`);
         return prevCartItems;
       }
+
+      console.log("here",[productId])
   
       // If new quantity is 0, remove the size from the product
       if (newQuantity === 0) {
