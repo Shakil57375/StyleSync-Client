@@ -72,9 +72,7 @@ const WishList = () => {
 
               {/* Product Name */}
               <td className="py-4 px-6">
-                <Link to={`/product/${product._id}`} className="text-blue-600 hover:underline">
-                  {product.name}
-                </Link>
+                  <p className="text-2xl">{product.name}</p>
               </td>
 
               {/* Product Price */}
