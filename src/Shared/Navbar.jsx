@@ -10,7 +10,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { ShopContext } from "../context/ShopContext";
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const { setShowSearch } = useContext(ShopContext);
+  const { setShowSearch, getCartCount } = useContext(ShopContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -72,7 +72,7 @@ const Navbar = () => {
           <Link to={"/cart"} className="relative">
             <IoBagOutline className="hover:text-gray-500 cursor-pointer text-3xl relative" />
             <span className="absolute bottom-0 right-0 bg-black text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
-              5
+              {getCartCount()}
             </span>
           </Link>
           <MdOutlineMenuOpen

@@ -13,7 +13,10 @@ const ShopContextProvider = ({ children }) => {
 
   const addToCart = async (itemId, size) => {
     if (!size) {
-      toast.error("Please select a size");
+      toast.error("Please select a size", {
+        position: "top-center",
+        autoClose: 2000,
+      });
       return;
     }
     let cartData = structuredClone(cartItems);
@@ -28,6 +31,24 @@ const ShopContextProvider = ({ children }) => {
       cartData[itemId][size] = 1;
     }
     setCartItems(cartData);
+    toast.success("Added to the cart", {
+      position: "top-center",
+      autoClose: 2000,
+    });
+  };
+
+  const getCartCount = () => {
+    let totalCount = 0;
+    for (const items in cartItems) {
+      for (const item in cartItems[items]) {
+        try {
+          if (cartItems[items][item] > 0) {
+            totalCount += cartItems[items][item];
+          }
+        } catch (error) {}
+      }
+    }
+    return totalCount;
   };
 
   // Manage Wish List
@@ -35,10 +56,16 @@ const ShopContextProvider = ({ children }) => {
     let wishListData = structuredClone(wishList);
     if (wishListData[itemId]) {
       delete wishListData[itemId];
-      toast.error("Removed from Wish List");
+      toast.error("Removed from Wish List", {
+        position: "top-center",
+        autoClose: 2000,
+      });
     } else {
       wishListData[itemId] = true;
-      toast.success("Added to Wish List");
+      toast.success("Added to Wish List", {
+        position: "top-center",
+        autoClose: 2000,
+      });
     }
     setWishList(wishListData);
   };
@@ -63,8 +90,9 @@ const ShopContextProvider = ({ children }) => {
     addToCart,
     wishList,
     toggleWishList,
+    getCartCount,
   };
-  
+
   return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
 };
 
