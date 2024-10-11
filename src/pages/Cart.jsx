@@ -1,11 +1,49 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from "react";
+import { ShopContext } from "../context/ShopContext";
+import Title from "../Components/Title";
 
 const Cart = () => {
-  return (
-    <div>
-      <p>This is </p>
-    </div>
-  )
-}
+  const { products, currency, cartItems } = useContext(ShopContext);
+  const [cartData, setCartData] = useState([]);
 
-export default Cart
+  useEffect(() => {
+    const tempData = [];
+    for (const items in cartItems) {
+      for (const item in cartItems[items]) {
+        if (cartItems[items][item] > 0) {
+          tempData.push({
+            _id: items,
+            size: item,
+            quantity: cartItems[items][item],
+          });
+        }
+      }
+    }
+    setCartData(tempData);
+  }, [cartItems]);
+  return (
+    <div className="border-t pt-8">
+      <div className="mb-3">
+        <Title title={"Your Cart"} />
+      </div>
+      {cartData.map((item) => {
+        const productData = products.find((product) => product._id == item._id);
+        return (
+          <div
+            key={item._id}
+            className="py-4 border-t border-b text-gray-700 grid grid-cols-[4fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4"
+          >
+            <div className="flex items-start gap-6">
+             <img className="w-16 sm:w-20" src={productData.images[0]} alt="" />
+             <div>
+              <p className="text-sm sm:text-lg font-medium">{productData.name}</p>
+             </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default Cart;
