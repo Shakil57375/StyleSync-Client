@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { products } from "../assets/assets";
 import { toast } from "react-toastify";
+import Swal from 'sweetalert2';
 export const ShopContext = createContext();
 
 const ShopContextProvider = ({ children }) => {
