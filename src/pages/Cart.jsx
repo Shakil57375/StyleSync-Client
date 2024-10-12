@@ -4,6 +4,7 @@ import Title from "../Components/Title";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2"; // Import SweetAlert2
 import CartTotal from "../Components/CartTotal";
+import Button from "../Components/Button";
 
 const Cart = () => {
   const { products, currency, cartItems, updateQuantity } =
@@ -108,6 +109,9 @@ const Cart = () => {
       <div className="flex justify-end my-20">
         <button className="w-full sm:w-[450px]">
           <CartTotal />
+          <div className="w-full text-end mt-6">
+            <Button text={"CHECKOUT"}></Button>
+          </div>
         </button>
       </div>
     </div>
