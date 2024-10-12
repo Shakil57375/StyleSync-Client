@@ -3,6 +3,7 @@ import { ShopContext } from "../context/ShopContext";
 import Title from "../Components/Title";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2"; // Import SweetAlert2
+import CartTotal from "../Components/CartTotal";
 
 const Cart = () => {
   const { products, currency, cartItems, updateQuantity } =
@@ -103,6 +104,12 @@ const Cart = () => {
           </div>
         );
       })}
+      {/* Add a checkout button */}
+      <div className="flex justify-end my-20">
+        <button className="w-full sm:w-[450px]">
+          <CartTotal />
+        </button>
+      </div>
     </div>
   );
 };

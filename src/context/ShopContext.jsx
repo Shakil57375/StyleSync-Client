@@ -52,22 +52,25 @@ const ShopContextProvider = ({ children }) => {
     return totalCount;
   };
 
-  const getCartAmount = async () =>{
+  const getCartAmount = () => {
     let totalAmount = 0;
-    for(const items in cartItems) {
-      let itemInfo = products.find((product) => product._id === items)
-      for(const item in cartItems[item]){
+    for (const productId in cartItems) {
+      let itemInfo = products.find((product) => product._id === parseInt(productId));
+      if (!itemInfo) continue; // Handle missing product case
+      
+      for (const size in cartItems[productId]) {
         try {
-          if(cartItems[items][item] > 0){
-            totalAmount += itemInfo.price * cartItems[items][item];
+          if (cartItems[productId][size] > 0) {
+            totalAmount += itemInfo.price * cartItems[productId][size];
           }
         } catch (error) {
-          
+          console.error("Error calculating amount: ", error);
         }
       }
     }
     return totalAmount;
-  }
+  };
+  
 
   const updateQuantity = (productId, size, newQuantity) => {
     setCartItems((prevCartItems) => {
