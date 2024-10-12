@@ -1,5 +1,8 @@
 import React from "react";
 import Title from "../Components/Title";
+import CartTotal from "../Components/CartTotal";
+import { FaStripe } from "react-icons/fa";
+import { SiRazorpay } from "react-icons/si";
 
 const PlaceOrder = () => {
   return (
@@ -55,11 +58,30 @@ const PlaceOrder = () => {
             placeholder="Country Name"
           />
         </div>
-          <input
-            className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
-            type="number"
-            placeholder="Phone Number"
-          />
+        <input
+          className="border border-gray-300 rounded py-1.5 px-3.5 w-full"
+          type="number"
+          placeholder="Phone Number"
+        />
+      </div>
+      {/* Right side */}
+      <div className="mt-8">
+        <div className="mt-8 min-w-80">
+          <CartTotal />
+        </div>
+        <div className="mt-12">
+          <Title title={"Payment Methods"}></Title>
+          <div className="flex gap-3 flex-col lg:flex-row">
+            <div className="flex items-center gap-3 border p-2 px-3 cursor-pointer">
+              <p className={`min-w-3.5 h-3.5 border rounded-full`}></p>
+              <FaStripe className="text-4xl text-blue-600"/>
+            </div>
+            <div className="flex items-center gap-3 border p-2 px-3 cursor-pointer">
+              <p className={`min-w-3.5 h-3.5 border rounded-full`}></p>
+              <SiRazorpay className="text-4xl text-blue-600"/>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
