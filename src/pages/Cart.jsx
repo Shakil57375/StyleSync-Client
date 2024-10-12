@@ -5,9 +5,10 @@ import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2"; // Import SweetAlert2
 import CartTotal from "../Components/CartTotal";
 import Button from "../Components/Button";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { products, currency, cartItems, updateQuantity } =
+  const { products, currency, cartItems, updateQuantity  } =
     useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
 
@@ -109,8 +110,10 @@ const Cart = () => {
       <div className="flex justify-end my-20">
         <button className="w-full sm:w-[450px]">
           <CartTotal />
-          <div className="w-full text-end mt-6">
-            <Button text={"CHECKOUT"}></Button>
+          <div  className="w-full text-end mt-6">
+            <span >
+            <Link to={"/place-order"} className="bg-black text-white px-8 py-4">Checkout</Link>
+            </span>
           </div>
         </button>
       </div>
