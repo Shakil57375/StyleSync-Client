@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Title from "../Components/Title";
 import CartTotal from "../Components/CartTotal";
 import { FaStripe } from "react-icons/fa";
 import { SiRazorpay } from "react-icons/si";
 
 const PlaceOrder = () => {
+  const [method, setMethod] = useState('cod')
   return (
     <div className="flex flex-col lg:flex-row justify-between gap-4 pt-5 lg:pt-8 min-h-[80vh] border-t ">
       {/* Left side */}
@@ -71,16 +72,16 @@ const PlaceOrder = () => {
         </div>
         <div className="mt-12">
           <Title title={"Payment Methods"}></Title>
-          <div className="flex gap-3 flex-col lg:flex-row">
+          <div onClick={()=>setMethod("stripe")} className="flex gap-3 flex-col lg:flex-row">
             <div className="flex items-center gap-3 border p-2 px-3 cursor-pointer">
               <p className={`min-w-3.5 h-3.5 border rounded-full`}></p>
               <FaStripe className="text-4xl text-blue-600"/>
             </div>
-            <div className="flex items-center gap-3 border p-2 px-3 cursor-pointer">
+            <div onClick={()=>setMethod("razorpay")} className="flex items-center gap-3 border p-2 px-3 cursor-pointer">
               <p className={`min-w-3.5 h-3.5 border rounded-full`}></p>
               <SiRazorpay className="text-4xl text-blue-600"/>
             </div>
-            <div className="flex items-center gap-3 border p-2 px-3 cursor-pointer">
+            <div onClick={()=>setMethod("cod")} className="flex items-center gap-3 border p-2 px-3 cursor-pointer">
               <p className={`min-w-3.5 h-3.5 border rounded-full`}></p>
               <p className="text-gray-500 text-sm font-medium mx-4">Cash On Delivery</p>
             </div>
