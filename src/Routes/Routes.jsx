@@ -10,6 +10,7 @@ import Product from "../pages/Product";
 import WishList from "../pages/WishList";
 import Cart from "../pages/Cart";
 import PlaceOrder from "../pages/PlaceOrder";
+import Orders from "../pages/Orders";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path : "/place-order",
         element : <PlaceOrder />
+      },
+      {
+        path : "/orders",
+        element : <Orders />
       },
       {
         path : "/about",

@@ -3,6 +3,7 @@ import Title from "../Components/Title";
 import CartTotal from "../Components/CartTotal";
 import { FaStripe } from "react-icons/fa";
 import { SiRazorpay } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 const PlaceOrder = () => {
   const [method, setMethod] = useState("cod")
@@ -86,6 +87,11 @@ const PlaceOrder = () => {
               <p className="text-gray-500 text-sm font-medium mx-4">Cash On Delivery</p>
             </div>
           </div>
+        </div>
+        <div className="w-full text-end mt-8">
+          <Link to={"/orders"} className="btn btn-success text-white">
+            Place Order
+          </Link>
         </div>
       </div>
     </div>
