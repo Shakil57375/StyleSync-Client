@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./carouselOverride.css"; 
+import "./carouselOverride.css";
 const Orders = () => {
   const { products, currency } = useContext(ShopContext);
-  
+
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -20,7 +20,15 @@ const Orders = () => {
   };
 
   if (products.length === 0) {
-    return <p className="text-center text-lg">Your Order List is empty. <Link to={"/collection"} className="text-blue-600 italic link">Order</Link> a product know</p>;
+    return (
+      <p className="text-center text-lg">
+        Your Order List is empty.{" "}
+        <Link to={"/collection"} className="text-blue-600 italic link">
+          Order
+        </Link>{" "}
+        a product know
+      </p>
+    );
   }
 
   return (
@@ -33,8 +41,11 @@ const Orders = () => {
             <th className="py-3 px-6 text-left">#</th>
             <th className="py-3 px-6 text-left">Image</th>
             <th className="py-3 px-6 text-left">Product Name</th>
+            <th className="py-3 px-6 text-left">Size</th>
+            <th className="py-3 px-6 text-left">Quantity</th>
             <th className="py-3 px-6 text-left">Price</th>
-            <th className="py-3 px-6 text-center">Actions</th>{" "}
+            <th className="py-3 px-6 text-left">Date</th>
+            <th className="py-3 px-6 text-left">Status</th>
             {/* Change header alignment */}
           </tr>
         </thead>
@@ -63,7 +74,15 @@ const Orders = () => {
 
               {/* Product Name */}
               <td className="py-4 px-6">
-                <p className="text-2xl">{product.name}</p>
+                <p className="text-xl">{product.name}</p>
+              </td>
+              {/* Product Name */}
+              <td className="py-4 px-6">
+                <p className="text-xl pl-5">M</p>
+              </td>
+              {/* Product Name */}
+              <td className="py-4 px-6">
+                <p className="text-xl pl-5">3</p>
               </td>
 
               {/* Product Price */}
@@ -78,26 +97,14 @@ const Orders = () => {
                 )}
               </td>
 
-              {/* Actions (Details and Remove) */}
+              {/* Order Date */}
               <td className="py-4 px-6">
-                <div className="grid justify-center items-center gap-2">
-                  {" "}
-                  {/* Apply grid for centering */}
-                  {/* Details Button */}
-                  <Link
-                    to={`/product/${product?._id}`}
-                    className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-                  >
-                    Details
-                  </Link>
-                  {/* Remove Button */}
-                  {/* <button
-                    className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-                    onClick={() => toggleWishList(product._id)} // Remove product from wishlist
-                  >
-                    Remove
-                  </button> */}
-                </div>
+                <span>12-03-2024</span>
+              </td>
+
+              {/* Product order status */}
+              <td className="py-4 px-6  ">
+                <span>Ready to ship</span>
               </td>
             </tr>
           ))}
