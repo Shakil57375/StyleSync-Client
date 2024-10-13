@@ -4,14 +4,13 @@ import Title from "../Components/Title";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2"; // Import SweetAlert2
 import CartTotal from "../Components/CartTotal";
-import Button from "../Components/Button";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { products, currency, cartItems, updateQuantity  } =
     useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
-
+  
   useEffect(() => {
     const tempData = [];
     for (const items in cartItems) {
@@ -54,6 +53,10 @@ const Cart = () => {
       }
     });
   };
+
+  if (cartData.length == 0) {
+    return <p className="text-center text-lg">Your Cart is empty. <Link to={"/collection"} className="text-blue-600 italic link">Add</Link> a product know</p>;
+  }
 
   return (
     <div className="border-t pt-8">
