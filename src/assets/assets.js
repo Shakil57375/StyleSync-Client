@@ -1,5 +1,8 @@
 import logo from "./StyleSync.png";
+import about_us_vd from "./Online Shopping 2D animation.mp4"
 import google_icon from "./google-icon.png"
+import about_us_img from "./How-to-write-about-us-page-for-eCommerce-website.png";
+import about_us_img_how_it_works_img from "./Customer-Journey-blog.gif"
 import banner_1 from "./banner-1.webp";
 import banner_2 from "./banner-2.jpg";
 import banner_3 from "./banner-3.jpg";
@@ -56,12 +59,15 @@ import k_wc_1_4 from "./k-wc-1-4.webp";
 
 export const assets = {
   logo,
+  about_us_img_how_it_works_img,
   google_icon,
+  about_us_img,
   banner_1,
   banner_2,
   banner_3,
   banner_4,
   banner_5,
+  about_us_vd,
   banner_6,
   m_s_1_1,
   m_s_1_2,
