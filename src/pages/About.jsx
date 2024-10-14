@@ -1,8 +1,9 @@
 import React from "react";
 import { assets } from "../assets/assets";
+import Testimonials from "../Components/Testimonial";
 const AboutUs = () => {
   return (
-    <div className="about-us-page">
+    <div className="w-full">
       {/* Hero Banner Section */}
       <section className="relative h-[500px]">
         <video
@@ -22,30 +23,38 @@ const AboutUs = () => {
         </div>
       </section>
 
-            {/* How StyleSync Works Section */}
-            <section className="py-16 px-8 bg-gray-100">
+      {/* How StyleSync Works Section */}
+      <section className="py-16 px-8 bg-gray-100">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">How StyleSync Works</h2>
           <p className="text-lg mb-8">
-            At StyleSync, we aim to provide a seamless and enjoyable shopping experience. Here's how it works:
+            At StyleSync, we aim to provide a seamless and enjoyable shopping
+            experience. Here's how it works:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="work-item text-center p-6 border rounded-lg">
-              <h3 className="text-2xl font-semibold mb-4">1. Browse Our Collection</h3>
+              <h3 className="text-2xl font-semibold mb-4">
+                1. Browse Our Collection
+              </h3>
               <p className="text-lg">
-                Explore a wide range of tech gadgets, fashion accessories, and lifestyle products that are curated to match your style.
+                Explore a wide range of tech gadgets, fashion accessories, and
+                lifestyle products that are curated to match your style.
               </p>
             </div>
             <div className="work-item text-center p-6 border rounded-lg">
-              <h3 className="text-2xl font-semibold mb-4">2. Easy and Secure Checkout</h3>
+              <h3 className="text-2xl font-semibold mb-4">
+                2. Easy and Secure Checkout
+              </h3>
               <p className="text-lg">
-                Add your favorite items to the cart, and check out in just a few clicks using our secure and user-friendly payment gateway.
+                Add your favorite items to the cart, and check out in just a few
+                clicks using our secure and user-friendly payment gateway.
               </p>
             </div>
             <div className="work-item text-center p-6 border rounded-lg">
               <h3 className="text-2xl font-semibold mb-4">3. Fast Delivery</h3>
               <p className="text-lg">
-                Once your order is placed, our team ensures fast and reliable delivery so you can enjoy your purchases quickly.
+                Once your order is placed, our team ensures fast and reliable
+                delivery so you can enjoy your purchases quickly.
               </p>
             </div>
           </div>
@@ -57,7 +66,6 @@ const AboutUs = () => {
           />
         </div>
       </section>
-
 
       {/* Mission and Vision Section */}
       <section className="py-16 px-8">
@@ -112,29 +120,7 @@ const AboutUs = () => {
           <h2 className="text-3xl font-bold mb-6">
             What Our Customers Are Saying
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 border rounded-lg">
-              <p className="text-lg italic">
-                "StyleSync has the best tech gadgets! I'm obsessed with their
-                wireless earbuds."
-              </p>
-              <p className="mt-4 font-semibold">- Sarah K.</p>
-            </div>
-            <div className="p-6 border rounded-lg">
-              <p className="text-lg italic">
-                "I love how I can find both stylish clothes and useful tech all
-                in one place."
-              </p>
-              <p className="mt-4 font-semibold">- Mark R.</p>
-            </div>
-            <div className="p-6 border rounded-lg">
-              <p className="text-lg italic">
-                "Fast shipping and great customer service! StyleSync is now my
-                go-to store."
-              </p>
-              <p className="mt-4 font-semibold">- Emily J.</p>
-            </div>
-          </div>
+          <Testimonials />
         </div>
       </section>
 

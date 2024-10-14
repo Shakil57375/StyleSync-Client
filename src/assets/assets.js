@@ -56,6 +56,9 @@ import k_wc_1_1 from "./k-wc-1-1.webp";
 import k_wc_1_2 from "./k-wc-1-2.webp";
 import k_wc_1_3 from "./k-wc-1-3.webp";
 import k_wc_1_4 from "./k-wc-1-4.webp";
+import user_1 from "./user_1.jpg"
+import user_2 from "./user_2.jpg"
+import user_3 from "./user_3.jpg"
 
 export const assets = {
   logo,
@@ -111,6 +114,9 @@ export const assets = {
   k_wc_1_2,
   k_wc_1_3,
   k_wc_1_4,
+  user_1,
+  user_2,
+  user_3,
 };
 
 export const products = [
