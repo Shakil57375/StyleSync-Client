@@ -12,6 +12,7 @@ import PlaceOrder from "../pages/PlaceOrder";
 import Orders from "../pages/Orders";
 import Login from "../Authentication/Login";
 import TermsAndConditions from "../pages/TermsAndConditions";
+import ReturnPolicy from "../pages/ReturnPolicy";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path : "/termsAndConditions",
         element : <TermsAndConditions/>
+      },
+      {
+        path : "/return-policy",
+        element : <ReturnPolicy/>
       },
     ],
   },
