@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Title from "../Components/Title";
 import { assets } from "../assets/assets";
+
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -16,7 +17,30 @@ const Register = () => {
 
   // Form validation: the form is valid if all fields are filled and terms are accepted
   const isFormValid =
-    name.trim() !== "" && email.trim() !== "" && password.trim() !== "" && acceptedTerms;
+    name.trim() !== "" &&
+    email.trim() !== "" &&
+    password.trim() !== "" &&
+    acceptedTerms;
+
+  // Password validation rules
+  const isPasswordValid = (password) => {
+    const lengthValid = password.length >= 8;
+    const uppercaseValid = /[A-Z]/.test(password);
+    const lowercaseValid = /[a-z]/.test(password);
+    const numberValid = /[0-9]/.test(password);
+    const specialCharacterValid = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    return {
+      lengthValid,
+      uppercaseValid,
+      lowercaseValid,
+      numberValid,
+      specialCharacterValid,
+    };
+  };
+
+  const { lengthValid, uppercaseValid, lowercaseValid, numberValid, specialCharacterValid } =
+    isPasswordValid(password);
 
   const handleBlur = (field) => {
     setTouched((prev) => ({ ...prev, [field]: true }));
@@ -41,7 +65,7 @@ const Register = () => {
           </div>
 
           <form className="lg:max-w-md w-full">
-            <Title title={"Register"}/>
+            <Title title={"Register"} />
             <div className="space-y-6">
               <div>
                 <label className="text-gray-800 text-sm mb-2 block">Name</label>
@@ -104,6 +128,21 @@ const Register = () => {
                 {touched.password && !password && (
                   <p className="text-red-500 text-xs mt-1">Please add your password</p>
                 )}
+                {touched.password && password && !lengthValid && (
+                  <p className="text-red-500 text-xs mt-1">Password must be at least 8 characters long.</p>
+                )}
+                {touched.password && password && !uppercaseValid && (
+                  <p className="text-red-500 text-xs mt-1">Password must contain at least one uppercase letter.</p>
+                )}
+                {touched.password && password && !lowercaseValid && (
+                  <p className="text-red-500 text-xs mt-1">Password must contain at least one lowercase letter.</p>
+                )}
+                {touched.password && password && !numberValid && (
+                  <p className="text-red-500 text-xs mt-1">Password must contain at least one number.</p>
+                )}
+                {touched.password && password && !specialCharacterValid && (
+                  <p className="text-red-500 text-xs mt-1">Password must contain at least one special character.</p>
+                )}
               </div>
 
               <div className="flex items-center">
@@ -138,24 +177,15 @@ const Register = () => {
               </button>
             </div>
             <div className="my-4 flex items-center gap-4">
-                <hr className="w-full border-gray-300" />
-                <p className="text-sm text-gray-800 text-center">or</p>
-                <hr className="w-full border-gray-300" />
-              </div>
-
-              <button
-                type="button"
-                className="w-full flex items-center justify-center gap-4 py-3 px-6 text-sm tracking-wide text-gray-800 border border-gray-300 rounded-md bg-gray-50 hover:bg-gray-100 focus:outline-none"
-              >
-                <img src={assets.google_icon} className="w-6 h-6" alt="" />
-                Continue with Google
-              </button>
-            <p className="text-sm text-gray-800 mt-6">
-              Already have an account?{" "}
-              <Link className="text-blue-600 font-semibold hover:underline ml-1" to={"/login"}>
-                Login here
+              <hr className="w-full border-gray-300" />
+              <p className="text-sm text-gray-800">or</p>
+              <hr className="w-full border-gray-300" />
+            </div>
+            <div className="flex items-center justify-center">
+              <Link to="/login" className="text-blue-600 hover:underline">
+                Already have an account? Log in
               </Link>
-            </p>
+            </div>
           </form>
         </div>
       </div>
