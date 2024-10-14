@@ -1,39 +1,46 @@
-import { Swiper, SwiperSlide } from 'swiper/react'; 
-import { Navigation, Pagination } from 'swiper/modules';  // Updated import path for v8+
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { assets } from '../assets/assets';
-import "./Testimonial.css"
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules"; // Updated import path for v8+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { assets } from "../assets/assets";
+import "./Testimonial.css";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: 'Tom Koch',
-      role: 'Developer',
+      name: "Tom Koch",
+      role: "Developer",
       image: assets.user_1, // Replace with actual path
       message:
-        'When our designs need an expert opinion or approval, I know I can rely on your agency. Thank you for all your help—I will be recommending you to everyone.',
+        "When our designs need an expert opinion or approval, I know I can rely on your agency. Thank you for all your help—I will be recommending you to everyone.",
     },
     {
-      name: 'Alan Max',
-      role: 'Designer',
+      name: "Alan Max",
+      role: "Designer",
       image: assets.user_2, // Replace with actual path
       message:
-        'When our designs need an expert opinion or approval, I know I can rely on your agency. Thank you for all your help—I will be recommending you to everyone.',
+        "When our designs need an expert opinion or approval, I know I can rely on your agency. Thank you for all your help—I will be recommending you to everyone.",
     },
     {
-      name: 'Kera Joo',
-      role: 'Support',
+      name: "Kera Joo",
+      role: "Support",
       image: assets.user_3, // Replace with actual path
       message:
-        'When our designs need an expert opinion or approval, I know I can rely on your agency. Thank you for all your help—I will be recommending you to everyone.',
+        "When our designs need an expert opinion or approval, I know I can rely on your agency. Thank you for all your help—I will be recommending you to everyone.",
     },
     {
-      name: 'Kera Joo',
-      role: 'Support',
+      name: "Kera Joo",
+      role: "Support",
       image: assets.user_3, // Replace with actual path
       message:
-        'When our designs need an expert opinion or approval, I know I can rely on your agency. Thank you for all your help—I will be recommending you to everyone.',
+        "When our designs need an expert opinion or approval, I know I can rely on your agency. Thank you for all your help—I will be recommending you to everyone.",
+    },
+    {
+      name: "Kera Joo",
+      role: "Support",
+      image: assets.user_3, // Replace with actual path
+      message:
+        "When our designs need an expert opinion or approval, I know I can rely on your agency. Thank you for all your help—I will be recommending you to everyone.",
     },
   ];
 
@@ -45,11 +52,15 @@ const Testimonials = () => {
       </div>
 
       <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={30}
-        slidesPerView={3}
+        modules={[Navigation, Pagination, Autoplay]} // Add Autoplay to the modules
         navigation
         pagination={{ clickable: true }}
+        autoplay={{
+          // Configure autoplay options
+          delay: 2500, // Delay between transitions (in ms)
+          disableOnInteraction: false, // Continue autoplay after user interactions
+        }}
+        loop={true} // Enable looping for infinite scroll
         breakpoints={{
           640: {
             slidesPerView: 1,
@@ -58,10 +69,9 @@ const Testimonials = () => {
             slidesPerView: 2,
           },
           1024: {
-            slidesPerView: 2,
+            slidesPerView: 3,
           },
         }}
-        className="testimonial-carousel"
       >
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index} className="p-6">
