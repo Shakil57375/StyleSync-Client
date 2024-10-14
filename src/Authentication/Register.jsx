@@ -10,7 +10,7 @@ const Register = () => {
             <img
               src="https://img.freepik.com/premium-vector/woman-register-online-concept-female-character-stand-large-laptop-logs-social_1002658-3572.jpg"
               class="w-full h-full object-cover"
-              alt="Dining Experience"
+              alt="Dining Experience" 
             />
           </div>
           <form class="lg:max-w-md w-full">
