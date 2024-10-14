@@ -13,6 +13,7 @@ import Orders from "../pages/Orders";
 import Login from "../Authentication/Login";
 import TermsAndConditions from "../pages/TermsAndConditions";
 import ReturnPolicy from "../pages/ReturnPolicy";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
 
 const router = createBrowserRouter([
   {
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path : "/return-policy",
         element : <ReturnPolicy/>
+      },
+      {
+        path : "/privacy-policy",
+        element : <PrivacyPolicy/>
       },
     ],
   },
