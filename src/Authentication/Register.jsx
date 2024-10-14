@@ -15,7 +15,7 @@ const Register = () => {
           </div>
           <form class="lg:max-w-md w-full">
             <h3 class="text-gray-800 text-3xl font-extrabold mb-12">
-              Registration
+              Register
             </h3>
             <div class="space-y-6">
               <div>
