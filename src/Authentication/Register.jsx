@@ -57,12 +57,12 @@ const Register = () => {
                   class="ml-3 block text-sm text-gray-800"
                 >
                   I accept the{" "}
-                  <a
-                    href="javascript:void(0);"
+                  <Link
+                    to="/termsAndConditions"
                     class="text-blue-600 font-semibold hover:underline ml-1"
                   >
                     Terms and Conditions
-                  </a>
+                  </Link>
                 </label>
               </div>
             </div>

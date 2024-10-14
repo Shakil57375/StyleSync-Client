@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TermsAndConditions = () => {
   return (
@@ -26,7 +27,7 @@ const TermsAndConditions = () => {
 
       <h2 className="text-2xl font-semibold mb-2">4. Return and Refund Policy</h2>
       <p className="mb-4">
-        If you are not satisfied with a product purchased through our website, you may be eligible for a return or refund. Please review our <a href="/return-policy" className="text-blue-600 underline">Return Policy</a> for more details.
+        If you are not satisfied with a product purchased through our website, you may be eligible for a return or refund. Please review our <Link href="/return-policy" className="text-blue-600 underline">Return Policy</Link> for more details.
       </p>
 
       <h2 className="text-2xl font-semibold mb-2">5. Privacy Policy</h2>

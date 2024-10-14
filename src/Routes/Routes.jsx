@@ -11,6 +11,7 @@ import Cart from "../pages/Cart";
 import PlaceOrder from "../pages/PlaceOrder";
 import Orders from "../pages/Orders";
 import Login from "../Authentication/Login";
+import TermsAndConditions from "../pages/TermsAndConditions";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path : "/contact",
         element : <Contact/>
+      },
+      {
+        path : "/termsAndConditions",
+        element : <TermsAndConditions/>
       },
     ],
   },
