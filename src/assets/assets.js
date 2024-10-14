@@ -1,4 +1,5 @@
 import logo from "./StyleSync.png";
+import google_icon from "./google-icon.png"
 import banner_1 from "./banner-1.webp";
 import banner_2 from "./banner-2.jpg";
 import banner_3 from "./banner-3.jpg";
@@ -55,6 +56,7 @@ import k_wc_1_4 from "./k-wc-1-4.webp";
 
 export const assets = {
   logo,
+  google_icon,
   banner_1,
   banner_2,
   banner_3,

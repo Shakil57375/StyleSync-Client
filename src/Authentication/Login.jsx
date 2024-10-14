@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { assets } from "../assets/assets";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -163,18 +163,7 @@ const Login = () => {
                 type="button"
                 className="w-full flex items-center justify-center gap-4 py-3 px-6 text-sm tracking-wide text-gray-800 border border-gray-300 rounded-md bg-gray-50 hover:bg-gray-100 focus:outline-none"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20px"
-                  className="inline"
-                  viewBox="0 0 512 512"
-                >
-                  <path
-                    fill="#fbbd00"
-                    d="M120 256c0-25.367 6.989-49.13 19.131-69.477v-86.308H52.823C19.283 130.016 0 189.527 0 256s19.283 125.984 52.823 155.785h86.308L139.131 325.477C126.989 305.13 120 281.367 120 256z"
-                  />
-                  {/* Remaining Google icon paths */}
-                </svg>
+                <img src={assets.google_icon} className="w-6 h-6" alt="" />
                 Continue with Google
               </button>
               <p className="text-gray-800 text-sm text-center mt-6">
