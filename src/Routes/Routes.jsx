@@ -1,8 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import Main from "../Main/Main";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
+import Register from "../Authentication/Register";
 import Collection from "../pages/Collection";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
@@ -11,6 +10,7 @@ import WishList from "../pages/WishList";
 import Cart from "../pages/Cart";
 import PlaceOrder from "../pages/PlaceOrder";
 import Orders from "../pages/Orders";
+import Login from "../Authentication/Login";
 
 const router = createBrowserRouter([
   {
