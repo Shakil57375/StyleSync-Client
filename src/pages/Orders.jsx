@@ -46,6 +46,7 @@ const Orders = () => {
             <th className="py-3 px-6 text-left">Price</th>
             <th className="py-3 px-6 text-left">Date</th>
             <th className="py-3 px-6 text-left">Status</th>
+            <th className="py-3 px-6 text-left">Track</th>
             {/* Change header alignment */}
           </tr>
         </thead>
@@ -105,6 +106,10 @@ const Orders = () => {
               {/* Product order status */}
               <td className="py-4 px-6  ">
                 <span>Ready to ship</span>
+              </td>
+              {/* Product order status */}
+              <td className="py-4 px-6  ">
+                <button className="border border-gray-500 px-4 py-2 rounded-md">Track Order</button>
               </td>
             </tr>
           ))}
