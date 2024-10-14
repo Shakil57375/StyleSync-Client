@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Title from "../Components/Title";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -40,7 +41,7 @@ const Register = () => {
           </div>
 
           <form className="lg:max-w-md w-full">
-            <h3 className="text-gray-800 text-3xl font-extrabold mb-12">Register</h3>
+            <Title title={"Register"}/>
             <div className="space-y-6">
               <div>
                 <label className="text-gray-800 text-sm mb-2 block">Name</label>
