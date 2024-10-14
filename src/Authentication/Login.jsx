@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { assets } from "../assets/assets";
+import Title from "../Components/Title";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,7 +36,7 @@ const Login = () => {
 
           <form className="md:max-w-md w-full mx-auto">
             <div className="mb-12">
-              <h3 className="text-4xl font-extrabold text-blue-600">Sign in</h3>
+                <Title title={"Login"}/>
             </div>
 
             <div>
