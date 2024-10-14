@@ -5,7 +5,7 @@ const Register = () => {
   return (
     <div class="font-[sans-serif]">
       <div class="min-h-screen flex fle-col items-center justify-center p-6">
-        <div class="flex items-center justify-between flex-col lg:flex-row gap-20 max-w-7xl max-lg:max-w-xl w-full">
+        <div class="flex items-center justify-between flex-col lg:flex-row gap-20 max-w-7xl max-lg:max-w-xl w-full shadow-[0_2px_16px_-3px_rgba(6,81,237,0.3)] p-10">
           <div class="h-full max-lg:mt-12">
             <img
               src="https://img.freepik.com/premium-vector/woman-register-online-concept-female-character-stand-large-laptop-logs-social_1002658-3572.jpg"

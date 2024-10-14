@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Login = () => {
   return (
     <div class="font-[sans-serif] bg-white flex items-center justify-center md:h-screen p-4">
-      <div class="shadow-[0_2px_16px_-3px_rgba(6,81,237,0.3)] max-w-6xl max-md:max-w-xl rounded-md p-10">
+      <div class="shadow-[0_2px_16px_-3px_rgba(6,81,237,0.3)] max-w-7xl max-md:max-w-xl rounded-md p-10">
 
         <div class="grid md:grid-cols-2 items-center gap-8">
           <div class="max-md:order-1 lg:min-w-[450px]">
