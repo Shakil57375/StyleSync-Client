@@ -5,7 +5,14 @@ const Register = () => {
   return (
     <div class="font-[sans-serif]">
       <div class="min-h-screen flex fle-col items-center justify-center p-6">
-        <div class="grid lg:grid-cols-2 items-center gap-6 max-w-7xl max-lg:max-w-xl w-full">
+        <div class="flex items-center justify-between flex-col lg:flex-row gap-20 max-w-7xl max-lg:max-w-xl w-full">
+          <div class="h-full max-lg:mt-12">
+            <img
+              src="https://img.freepik.com/premium-vector/woman-register-online-concept-female-character-stand-large-laptop-logs-social_1002658-3572.jpg"
+              class="w-full h-full object-cover"
+              alt="Dining Experience"
+            />
+          </div>
           <form class="lg:max-w-md w-full">
             <h3 class="text-gray-800 text-3xl font-extrabold mb-12">
               Registration

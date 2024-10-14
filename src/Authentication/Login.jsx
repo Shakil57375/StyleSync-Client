@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Login = () => {
   return (
     <div class="font-[sans-serif] bg-white flex items-center justify-center md:h-screen p-4">
@@ -86,7 +88,7 @@ const Login = () => {
               </svg>
               Continue with google
             </button>
-              <p class="text-gray-800 text-sm text-center mt-6">Don't have an account <a href="javascript:void(0);" class="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">Register here</a></p>
+              <p class="text-gray-800 text-sm text-center mt-6">Don't have an account <Link to={"/register"} href="javascript:void(0);" class="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">Register here</Link></p>
             </div>
             
           </form>
