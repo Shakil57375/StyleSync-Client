@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Title from "../Components/Title";
-
+import { assets } from "../assets/assets";
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -127,7 +127,7 @@ const Register = () => {
             <div className="mt-12">
               <button
                 type="button"
-                className={`py-4 px-8 text-sm font-semibold text-white tracking-wide rounded-md ${
+                className={`py-4 px-8 text-sm font-semibold text-white tracking-wide rounded-md w-full ${
                   isFormValid
                     ? "bg-blue-600 hover:bg-blue-700"
                     : "bg-gray-400 cursor-not-allowed"
@@ -137,6 +137,19 @@ const Register = () => {
                 Create an account
               </button>
             </div>
+            <div className="my-4 flex items-center gap-4">
+                <hr className="w-full border-gray-300" />
+                <p className="text-sm text-gray-800 text-center">or</p>
+                <hr className="w-full border-gray-300" />
+              </div>
+
+              <button
+                type="button"
+                className="w-full flex items-center justify-center gap-4 py-3 px-6 text-sm tracking-wide text-gray-800 border border-gray-300 rounded-md bg-gray-50 hover:bg-gray-100 focus:outline-none"
+              >
+                <img src={assets.google_icon} className="w-6 h-6" alt="" />
+                Continue with Google
+              </button>
             <p className="text-sm text-gray-800 mt-6">
               Already have an account?{" "}
               <Link className="text-blue-600 font-semibold hover:underline ml-1" to={"/login"}>
