@@ -91,7 +91,7 @@ const Contact = () => {
           we'd love to hear about your project and provide help.
         </p>
 
-        <form>
+        <form action="https://formspree.io/f/xnqrgldo" method="POST"> 
           <div class="space-y-4 mt-8">
             <input
               type="text"
