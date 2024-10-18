@@ -30,7 +30,7 @@ const Contact = () => {
             <div class="ml-4">
               <h4 class="text-gray-800 text-base font-semibold">Chat to us</h4>
               <p class="text-xs mt-1">Chat with our team to help.</p>
-              <p class="text-sm mt-4">exmple@gmail.com</p>
+              <p class="text-sm mt-4">shakil57375@gmail.com</p>
             </div>
           </div>
 
@@ -75,8 +75,8 @@ const Contact = () => {
 
             <div class="ml-4">
               <h4 class="text-gray-800 text-base font-semibold">Call us</h4>
-              <p class="text-xs mt-1">Monday to Friday.</p>
-              <p class="text-sm mt-4">+158 996 888</p>
+              <p class="text-xs mt-1">24/7</p>
+              <p class="text-sm mt-4">+8801814265294</p>
             </div>
           </div>
         </div>
