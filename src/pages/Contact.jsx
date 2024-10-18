@@ -1,133 +1,151 @@
-import React, { useState, useEffect } from 'react';
+import React from "react";
 
-const ContactUs = () => {
-  const [latitude, setLatitude] = useState(null);
-  const [longitude, setLongitude] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(null);
-
-  // Use Geolocation API to get the user's location
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setLatitude(position.coords.latitude);
-          setLongitude(position.coords.longitude);
-        },
-        (error) => {
-          setErrorMessage('Unable to retrieve your location. Please allow location access.');
-        }
-      );
-    } else {
-      setErrorMessage('Geolocation is not supported by this browser.');
-    }
-  }, []);
-
+const Contact = () => {
   return (
-    <div className="grid md:grid-cols-2 gap-16 items-center relative overflow-hidden p-8 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-3xl max-w-6xl mx-auto bg-white mt-4 font-[sans-serif]">
-      <div>
-        <h2 className="text-gray-800 text-3xl font-extrabold">Get In Touch</h2>
-        <p className="text-sm text-gray-500 mt-4 leading-relaxed">
-          Have a specific inquiry or looking to explore new opportunities? Our experienced team is ready to engage with you.
+    <div class="grid md:grid-cols-3 items-start gap-4 max-md:gap-12 max-w-6xl mx-auto py-6 bg-white font-[sans-serif]">
+      <div class="px-4">
+        <h2 class="text-gray-800 text-2xl font-semibold">
+          Contact Information
+        </h2>
+
+        <div class="space-y-8 mt-8">
+          <div class="flex">
+            <div class="w-8 h-8 flex items-center shrink-0 rounded border p-1.5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-full"
+                viewBox="0 0 32 32"
+              >
+                <path
+                  d="M8 30a1.001 1.001 0 0 1-1-1v-5H4c-1.654 0-3-1.346-3-3V5c0-1.654 1.346-3 3-3h24c1.654 0 3 1.346 3 3v16c0 1.654-1.346 3-3 3H15.851l-7.226 5.781A.998.998 0 0 1 8 30zM4 4c-.552 0-1 .449-1 1v16c0 .551.448 1 1 1h4a1 1 0 0 1 1 1v3.92l5.875-4.701A1 1 0 0 1 15.5 22H28c.552 0 1-.449 1-1V5c0-.551-.448-1-1-1z"
+                  data-original="#000000"
+                />
+                <path
+                  d="M24 12H8a1 1 0 1 1 0-2h16a1 1 0 1 1 0 2zm-8 4H8a1 1 0 1 1 0-2h8a1 1 0 1 1 0 2z"
+                  data-original="#000000"
+                />
+              </svg>
+            </div>
+
+            <div class="ml-4">
+              <h4 class="text-gray-800 text-base font-semibold">Chat to us</h4>
+              <p class="text-xs mt-1">Chat with our team to help.</p>
+              <p class="text-sm mt-4">exmple@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="flex">
+            <div class="w-8 h-8 flex items-center shrink-0 rounded border p-1.5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-full"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  d="M341.476 338.285c54.483-85.493 47.634-74.827 49.204-77.056C410.516 233.251 421 200.322 421 166 421 74.98 347.139 0 256 0 165.158 0 91 74.832 91 166c0 34.3 10.704 68.091 31.19 96.446l48.332 75.84C118.847 346.227 31 369.892 31 422c0 18.995 12.398 46.065 71.462 67.159C143.704 503.888 198.231 512 256 512c108.025 0 225-30.472 225-90 0-52.117-87.744-75.757-139.524-83.715zm-194.227-92.34a15.57 15.57 0 0 0-.517-.758C129.685 221.735 121 193.941 121 166c0-75.018 60.406-136 135-136 74.439 0 135 61.009 135 136 0 27.986-8.521 54.837-24.646 77.671-1.445 1.906 6.094-9.806-110.354 172.918L147.249 245.945zM256 482c-117.994 0-195-34.683-195-60 0-17.016 39.568-44.995 127.248-55.901l55.102 86.463a14.998 14.998 0 0 0 25.298 0l55.101-86.463C411.431 377.005 451 404.984 451 422c0 25.102-76.313 60-195 60z"
+                  data-original="#000000"
+                />
+                <path
+                  d="M256 91c-41.355 0-75 33.645-75 75s33.645 75 75 75 75-33.645 75-75-33.645-75-75-75zm0 120c-24.813 0-45-20.187-45-45s20.187-45 45-45 45 20.187 45 45-20.187 45-45 45z"
+                  data-original="#000000"
+                />
+              </svg>
+            </div>
+
+            <div class="ml-4">
+              <h4 class="text-gray-800 text-base font-semibold">Visit us</h4>
+              <p class="text-xs mt-1">Visit our office HQ.</p>
+              <p class="text-sm mt-4">123 Street 256 House</p>
+            </div>
+          </div>
+
+          <div class="flex">
+            <div class="w-8 h-8 flex items-center shrink-0 rounded border p-1.5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-full"
+                viewBox="0 0 473.806 473.806"
+              >
+                <path
+                  d="M374.456 293.506c-9.7-10.1-21.4-15.5-33.8-15.5-12.3 0-24.1 5.3-34.2 15.4l-31.6 31.5c-2.6-1.4-5.2-2.7-7.7-4-3.6-1.8-7-3.5-9.9-5.3-29.6-18.8-56.5-43.3-82.3-75-12.5-15.8-20.9-29.1-27-42.6 8.2-7.5 15.8-15.3 23.2-22.8 2.8-2.8 5.6-5.7 8.4-8.5 21-21 21-48.2 0-69.2l-27.3-27.3c-3.1-3.1-6.3-6.3-9.3-9.5-6-6.2-12.3-12.6-18.8-18.6-9.7-9.6-21.3-14.7-33.5-14.7s-24 5.1-34 14.7l-.2.2-34 34.3c-12.8 12.8-20.1 28.4-21.7 46.5-2.4 29.2 6.2 56.4 12.8 74.2 16.2 43.7 40.4 84.2 76.5 127.6 43.8 52.3 96.5 93.6 156.7 122.7 23 10.9 53.7 23.8 88 26 2.1.1 4.3.2 6.3.2 23.1 0 42.5-8.3 57.7-24.8.1-.2.3-.3.4-.5 5.2-6.3 11.2-12 17.5-18.1 4.3-4.1 8.7-8.4 13-12.9 9.9-10.3 15.1-22.3 15.1-34.6 0-12.4-5.3-24.3-15.4-34.3l-54.9-55.1zm35.8 105.3c-.1 0-.1.1 0 0-3.9 4.2-7.9 8-12.2 12.2-6.5 6.2-13.1 12.7-19.3 20-10.1 10.8-22 15.9-37.6 15.9-1.5 0-3.1 0-4.6-.1-29.7-1.9-57.3-13.5-78-23.4-56.6-27.4-106.3-66.3-147.6-115.6-34.1-41.1-56.9-79.1-72-119.9-9.3-24.9-12.7-44.3-11.2-62.6 1-11.7 5.5-21.4 13.8-29.7l34.1-34.1c4.9-4.6 10.1-7.1 15.2-7.1 6.3 0 11.4 3.8 14.6 7l.3.3c6.1 5.7 11.9 11.6 18 17.9 3.1 3.2 6.3 6.4 9.5 9.7l27.3 27.3c10.6 10.6 10.6 20.4 0 31-2.9 2.9-5.7 5.8-8.6 8.6-8.4 8.6-16.4 16.6-25.1 24.4-.2.2-.4.3-.5.5-8.6 8.6-7 17-5.2 22.7l.3.9c7.1 17.2 17.1 33.4 32.3 52.7l.1.1c27.6 34 56.7 60.5 88.8 80.8 4.1 2.6 8.3 4.7 12.3 6.7 3.6 1.8 7 3.5 9.9 5.3.4.2.8.5 1.2.7 3.4 1.7 6.6 2.5 9.9 2.5 8.3 0 13.5-5.2 15.2-6.9l34.2-34.2c3.4-3.4 8.8-7.5 15.1-7.5 6.2 0 11.3 3.9 14.4 7.3l.2.2 55.1 55.1c10.3 10.2 10.3 20.7.1 31.3zm-154.2-286.1c26.2 4.4 50 16.8 69 35.8s31.3 42.8 35.8 69c1.1 6.6 6.8 11.2 13.3 11.2.8 0 1.5-.1 2.3-.2 7.4-1.2 12.3-8.2 11.1-15.6-5.4-31.7-20.4-60.6-43.3-83.5s-51.8-37.9-83.5-43.3c-7.4-1.2-14.3 3.7-15.6 11s3.5 14.4 10.9 15.6zm217.2 96.3c-8.9-52.2-33.5-99.7-71.3-137.5s-85.3-62.4-137.5-71.3c-7.3-1.3-14.2 3.7-15.5 11-1.2 7.4 3.7 14.3 11.1 15.6 46.6 7.9 89.1 30 122.9 63.7 33.8 33.8 55.8 76.3 63.7 122.9 1.1 6.6 6.8 11.2 13.3 11.2.8 0 1.5-.1 2.3-.2 7.3-1.1 12.3-8.1 11-15.4z"
+                  data-original="#000000"
+                />
+              </svg>
+            </div>
+
+            <div class="ml-4">
+              <h4 class="text-gray-800 text-base font-semibold">Call us</h4>
+              <p class="text-xs mt-1">Monday to Friday.</p>
+              <p class="text-sm mt-4">+158 996 888</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-3xl md:col-span-2 p-8">
+        <h2 class="text-2xl text-yellow-300 font-semibold">
+          Product or Service Inquiry
+        </h2>
+        <p class="text-sm text-gray-300 mt-4 leading-relaxed">
+          Have some big idea or brand to develop and need help? Then reach out
+          we'd love to hear about your project and provide help.
         </p>
+
         <form>
-          <div className="space-y-4 mt-8">
+          <div class="space-y-4 mt-8">
             <input
               type="text"
               placeholder="Full Name"
-              className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none"
+              class="px-2 py-3 bg-transparent text-gray-200 font-medium w-full text-sm border-b border-gray-400 focus:border-yellow-300 outline-none"
             />
             <input
               type="text"
               placeholder="Street"
-              className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none"
+              class="px-2 py-3 bg-transparent text-gray-200 font-medium w-full text-sm border-b border-gray-400 focus:border-yellow-300 outline-none"
             />
-            <div className="grid grid-cols-2 gap-6">
-              <input
-                type="text"
-                placeholder="City"
-                className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none"
-              />
-              <input
-                type="text"
-                placeholder="Postcode"
-                className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none"
-              />
-            </div>
             <input
               type="number"
               placeholder="Phone No."
-              className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none"
+              class="px-2 py-3 bg-transparent text-gray-200 font-medium w-full text-sm border-b border-gray-400 focus:border-yellow-300 outline-none"
             />
+
             <input
               type="email"
               placeholder="Email"
-              className="px-2 py-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none"
+              class="px-2 py-3 bg-transparent text-gray-200 font-medium w-full text-sm border-b border-gray-400 focus:border-yellow-300 outline-none"
             />
+
             <textarea
               placeholder="Write Message"
-              className="px-2 pt-3 bg-white w-full text-gray-800 text-sm border-b border-gray-300 focus:border-blue-600 outline-none"
+              class="px-2 pt-3 bg-transparent text-gray-200 font-medium w-full text-sm border-b border-gray-400 focus:border-yellow-300 outline-none"
             ></textarea>
           </div>
+
           <button
             type="button"
-            className="mt-8 flex items-center justify-center text-sm w-full rounded-md px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white"
+            class="mt-8 flex items-center justify-center text-sm w-full rounded-md px-4 py-2.5 text-gray-800 bg-yellow-400 hover:bg-yellow-500"
           >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16px"
+              height="16px"
+              fill="currentColor"
+              class="mr-3"
+              viewBox="0 0 548.244 548.244"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z"
+                clip-rule="evenodd"
+                data-original="#000000"
+              />
+            </svg>
             Send Message
           </button>
         </form>
-        <ul className="mt-4 flex flex-wrap justify-center gap-6">
-          <li className="flex items-center text-blue-600">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16px"
-              height="16px"
-              fill="currentColor"
-              viewBox="0 0 479.058 479.058"
-            >
-              <path
-                d="M434.146 59.882H44.912C20.146 59.882 0 80.028 0 104.794v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159L239.529 264.631 39.173 90.982a14.902 14.902 0 0 1 5.738-1.159zm0 299.411H44.912c-8.26 0-14.971-6.71-14.971-14.971V122.615l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z"
-              />
-            </svg>
-            <a href="mailto:info@example.com" className="text-sm ml-4">
-              <strong>info@example.com</strong>
-            </a>
-          </li>
-          <li className="flex items-center text-blue-600">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16px"
-              height="16px"
-              fill="currentColor"
-              viewBox="0 0 482.6 482.6"
-            >
-              <path
-                d="M98.339 320.8c47.6 56.9 104.9 101.7 170.3 133.4 24.9 11.8 58.2 25.8 95.3 28.2 2.3.1 4.5.2 6.8.2 24.9 0 44.9-8.6 61.2-26.3.1-.1.3-.3.4-.5 5.8-7 12.4-13.3 19.3-20 4.7-4.5 9.5-9.2 14.1-14 21.3-22.2 21.3-50.4-.2-71.9l-60.1-60.1c-10.2-10.6-22.4-16.2-35.2-16.2-12.8 0-25.1 5.6-35.6 16.1l-35.8 35.8c-3.3-1.9-6.7-3.6-9.9-5.2-4-2-7.7-3.9-11-6-32.6-20.7-62.2-47.7-90.5-82.4-14.3-18.1-23.9-33.3-30.6-48.8 9.4-8.5 18.2-17.4 26.7-26.1 3-3.1 6.1-6.2 9.2-9.3 10.8-10.8 16.6-23.3 16.6-36s-5.7-25.2-16.6-36l-29.8-29.8c-3.5-3.5-6.8-6.9-10.2-10.4-6.6-6.8-13.5-13.8-20.3-20.1-10.3-10.1-22.4-15.4-35.2-15.4-12.7 0-24.9 5.3-35.6 15.5l-37.4 37.4c-13.6 13.6-21.3 30.1-22.9 49.2-1.9 23.9 2.5 49.3 13.9 80 17.5 47.5 43.9 91.6 83.1 138.7zm-72.6-216.6c1.2-13.3 6.3-24.4 15.9-34l37.3-37.3c5.6-5.6 11.4-8.4 18.2-8.4 6.9 0 14.2 3.6 21.5 10.7 6.6 6.4 13.4 13.5 19.9 20.3 3.3 3.3 6.6 6.7 10 10.2l29.8 29.8c11.3 11.3 11.3 20.7 0 32-3.1 3.1-6.2 6.2-9.3 9.3-8.2 8.3-16.7 16.8-25.3 25.3l-7.3 7.3 2.9 8.3c7.7 22 17.8 40.9 34.9 61.6 31 38.9 62.3 68.4 98.2 89.5 3.6 2.2 7.4 4.3 11.4 6.4l8.1 4.2 6.6-6.6 37.4-37.4c11.1-11.1 21.6-11.1 32.9.2l60.1 60.1c11.4 11.4 11.5 21.5.2 32.9-4.6 4.8-9.4 9.6-14.1 14.1-7 6.8-13.5 13.2-19.4 20.2-12.4 14.9-26.6 21.5-45.7 20.2-33.3-2.2-64.1-15.7-86.5-26.4-63.4-30-117.8-72.6-160.2-128.6-36.4-46.2-61.7-88.5-78.3-132.7-10.3-27.9-14.2-50.7-12.5-69.8z"
-              />
-            </svg>
-            <a href="tel:+880-1716-969787" className="text-sm ml-4">
-              <strong>+880 1716 969787</strong>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div className="map-container">
-        {latitude && longitude ? (
-          <iframe
-            src={`https://www.google.com/maps/embed/v1/view?key=YOUR_GOOGLE_MAPS_API_KEY&center=${latitude},${longitude}&zoom=14`}
-            width="100%"
-            height="450"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            title="Google Map"
-          ></iframe>
-        ) : (
-          <p>{errorMessage || 'Fetching your location...'}</p>
-        )}
       </div>
     </div>
   );
 };
 
-export default ContactUs;
+export default Contact;
