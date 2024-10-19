@@ -1,6 +1,7 @@
 import React from "react";
 import { assets } from "../assets/assets";
 import Testimonials from "../Components/Testimonial";
+import NewsLatter from "../Components/NewsLatter";
 const AboutUs = () => {
   return (
     <div className="w-full">
@@ -164,6 +165,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+      <NewsLatter />
     </div>
   );
 };
