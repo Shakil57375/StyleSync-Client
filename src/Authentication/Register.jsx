@@ -39,8 +39,13 @@ const Register = () => {
     };
   };
 
-  const { lengthValid, uppercaseValid, lowercaseValid, numberValid, specialCharacterValid } =
-    isPasswordValid(password);
+  const {
+    lengthValid,
+    uppercaseValid,
+    lowercaseValid,
+    numberValid,
+    specialCharacterValid,
+  } = isPasswordValid(password);
 
   const handleBlur = (field) => {
     setTouched((prev) => ({ ...prev, [field]: true }));
@@ -55,7 +60,12 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Perform form submission logic here
-    console.log("Form submitted with data:", { name, email, password, acceptedTerms });
+    console.log("Form submitted with data:", {
+      name,
+      email,
+      password,
+      acceptedTerms,
+    });
   };
 
   return (
@@ -85,12 +95,16 @@ const Register = () => {
                   placeholder="Enter name"
                 />
                 {touched.name && !name && (
-                  <p className="text-red-500 text-xs mt-1">Please add your name</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    Please add your name
+                  </p>
                 )}
               </div>
 
               <div>
-                <label className="text-gray-800 text-sm mb-2 block">Email</label>
+                <label className="text-gray-800 text-sm mb-2 block">
+                  Email
+                </label>
                 <input
                   name="email"
                   type="text"
@@ -101,12 +115,16 @@ const Register = () => {
                   placeholder="Enter email"
                 />
                 {touched.email && !email && (
-                  <p className="text-red-500 text-xs mt-1">Please add your email</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    Please add your email
+                  </p>
                 )}
               </div>
 
               <div>
-                <label className="text-gray-800 text-sm mb-2 block">Password</label>
+                <label className="text-gray-800 text-sm mb-2 block">
+                  Password
+                </label>
                 <div className="relative flex items-center">
                   <input
                     name="password"
@@ -132,22 +150,34 @@ const Register = () => {
                   </svg>
                 </div>
                 {touched.password && !password && (
-                  <p className="text-red-500 text-xs mt-1">Please add your password</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    Please add your password
+                  </p>
                 )}
                 {touched.password && password && !lengthValid && (
-                  <p className="text-red-500 text-xs mt-1">Password must be at least 8 characters long.</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    Password must be at least 8 characters long.
+                  </p>
                 )}
                 {touched.password && password && !uppercaseValid && (
-                  <p className="text-red-500 text-xs mt-1">Password must contain at least one uppercase letter.</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    Password must contain at least one uppercase letter.
+                  </p>
                 )}
                 {touched.password && password && !lowercaseValid && (
-                  <p className="text-red-500 text-xs mt-1">Password must contain at least one lowercase letter.</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    Password must contain at least one lowercase letter.
+                  </p>
                 )}
                 {touched.password && password && !numberValid && (
-                  <p className="text-red-500 text-xs mt-1">Password must contain at least one number.</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    Password must contain at least one number.
+                  </p>
                 )}
                 {touched.password && password && !specialCharacterValid && (
-                  <p className="text-red-500 text-xs mt-1">Password must contain at least one special character.</p>
+                  <p className="text-red-500 text-xs mt-1">
+                    Password must contain at least one special character.
+                  </p>
                 )}
               </div>
 
@@ -160,9 +190,15 @@ const Register = () => {
                   checked={acceptedTerms}
                   onChange={handleTermsChange}
                 />
-                <label htmlFor="remember-me" className="ml-3 block text-sm text-gray-800">
+                <label
+                  htmlFor="remember-me"
+                  className="ml-3 block text-sm text-gray-800"
+                >
                   I accept the{" "}
-                  <Link to="/termsAndConditions" className="text-blue-600 font-semibold hover:underline ml-1">
+                  <Link
+                    to="/termsAndConditions"
+                    className="text-blue-600 font-semibold hover:underline ml-1"
+                  >
                     Terms and Conditions
                   </Link>
                 </label>
@@ -187,14 +223,15 @@ const Register = () => {
               <p className="text-sm text-gray-800">or</p>
               <hr className="w-full border-gray-300" />
             </div>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center gap-1">
+              <p>Already have an account? </p>
               <Link to="/login" className="text-blue-600 hover:underline">
-                Already have an account? Log in
+                Log in
               </Link>
             </div>
           </form>
         </div>
-      </div> 
+      </div>
     </div>
   );
 };

@@ -11,6 +11,11 @@ const Collection = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedSubCategories, setSelectedSubCategories] = useState([]);
   const [sortType, setSortType] = useState("relevant");
+
+  // Pagination states
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 3; // Define how many products per page
+
   // Toggle selection for categories
   const handleCategoryChange = (e) => {
     const category = e.target.value;
@@ -70,6 +75,29 @@ const Collection = () => {
         break;
     }
   };
+
+  // Pagination logic
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage((prevPage) => prevPage + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prevPage) => prevPage - 1);
+    }
+  };
+
   useEffect(() => {
     applyFilter();
   }, [selectedCategories, selectedSubCategories, search, showSearch]);
@@ -195,9 +223,36 @@ const Collection = () => {
 
         {/* Display Products */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-6">
-          {filteredProducts.map((product) => (
+          {currentProducts.map((product) => (
             <ProductItem key={product._id} product={product} />
           ))}
+        </div>
+
+        {/* Pagination */}
+        <div className="mt-8 flex justify-center items-center gap-4">
+          <button
+            onClick={handlePrevPage}
+            className={`px-3 py-1 border ${currentPage === 1 ? "cursor-not-allowed" : ""}`}
+            disabled={currentPage === 1}
+          >
+            Prev
+          </button>
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button
+              key={index + 1}
+              className={`px-3 py-1 border ${index + 1 === currentPage ? "bg-gray-800 text-white" : ""}`}
+              onClick={() => handlePageChange(index + 1)}
+            >
+              {index + 1}
+            </button>
+          ))}
+          <button
+            onClick={handleNextPage}
+            className={`px-3 py-1 border ${currentPage === totalPages ? "cursor-not-allowed" : ""}`}
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
         </div>
       </div>
     </div>
