@@ -22,6 +22,11 @@ const Login = () => {
     setTouched((prev) => ({ ...prev, [field]: true }));
   };
 
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    console.log(email, password)
+  }
+
   return (
     <div className="font-[sans-serif] bg-white flex items-center justify-center md:h-screen p-4">
       <div className="shadow-[0_2px_16px_-3px_rgba(6,81,237,0.3)] max-w-7xl max-md:max-w-xl rounded-md p-10">
@@ -34,7 +39,7 @@ const Login = () => {
             />
           </div>
 
-          <form className="md:max-w-md w-full mx-auto">
+          <form onSubmit={handleSubmit} className="md:max-w-md w-full mx-auto">
             <div className="mb-12">
                 <Title title={"Login"}/>
             </div>
@@ -144,7 +149,7 @@ const Login = () => {
 
             <div className="mt-12">
               <button
-                type="button"
+                type="submit"
                 className={`w-full shadow-xl py-2.5 px-5 text-sm font-semibold rounded-md text-white ${
                   isFormValid
                     ? "bg-blue-600 hover:bg-blue-700"
@@ -161,7 +166,7 @@ const Login = () => {
               </div>
 
               <button
-                type="button"
+                type="submit"
                 className="w-full flex items-center justify-center gap-4 py-3 px-6 text-sm tracking-wide text-gray-800 border border-gray-300 rounded-md bg-gray-50 hover:bg-gray-100 focus:outline-none"
               >
                 <img src={assets.google_icon} className="w-6 h-6" alt="" />

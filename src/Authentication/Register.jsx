@@ -52,6 +52,12 @@ const Register = () => {
 
   const handleTermsChange = (e) => setAcceptedTerms(e.target.checked); // Handle checkbox change
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Perform form submission logic here
+    console.log("Form submitted with data:", { name, email, password, acceptedTerms });
+  };
+
   return (
     <div className="font-[sans-serif]">
       <div className="min-h-screen flex flex-col items-center justify-center p-6">
@@ -64,7 +70,7 @@ const Register = () => {
             />
           </div>
 
-          <form className="lg:max-w-md w-full">
+          <form onSubmit={handleSubmit} className="lg:max-w-md w-full">
             <Title title={"Register"} />
             <div className="space-y-6">
               <div>
@@ -165,7 +171,7 @@ const Register = () => {
 
             <div className="mt-12">
               <button
-                type="button"
+                type="submit"
                 className={`py-4 px-8 text-sm font-semibold text-white tracking-wide rounded-md w-full ${
                   isFormValid
                     ? "bg-blue-600 hover:bg-blue-700"
