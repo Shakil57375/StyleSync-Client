@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { assets } from "../assets/assets";
 import Title from "../Components/Title";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,10 +23,14 @@ const Login = () => {
     setTouched((prev) => ({ ...prev, [field]: true }));
   };
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password)
-  }
+    const result = {
+      email,
+      password,
+    };
+    console.log(result); // Logs the credentials in the format: { email: 'saadh392@mail.com', password: 'bestPassw0rd' }
+  };
 
   return (
     <div className="font-[sans-serif] bg-white flex items-center justify-center md:h-screen p-4">
@@ -41,7 +46,7 @@ const Login = () => {
 
           <form onSubmit={handleSubmit} className="md:max-w-md w-full mx-auto">
             <div className="mb-12">
-                <Title title={"Login"}/>
+              <Title title={"Login"} />
             </div>
 
             <div>
@@ -172,15 +177,18 @@ const Login = () => {
                 <img src={assets.google_icon} className="w-6 h-6" alt="" />
                 Continue with Google
               </button>
-              <p className="text-gray-800 text-sm text-center mt-6">
-                Don't have an account{" "}
-                <Link
-                  to={"/register"}
-                  className="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap"
-                >
-                  Register here
-                </Link>
-              </p>
+
+              <div className="mt-8 text-center">
+                <p className="text-sm text-gray-600">
+                  Don’t have an account?{" "}
+                  <Link
+                    to="/register"
+                    className="font-semibold text-blue-600 hover:underline"
+                  >
+                    Create account
+                  </Link>
+                </p>
+              </div>
             </div>
           </form>
         </div>
