@@ -1,7 +1,9 @@
 import React from "react";
+import NewsLatter from "../Components/NewsLatter";
 
 const Contact = () => {
   return (
+    <div>
     <div class="grid md:grid-cols-3 items-start gap-4 max-md:gap-12 max-w-6xl mx-auto py-6 bg-white font-[sans-serif]">
       <div class="px-4">
         <h2 class="text-gray-800 text-2xl font-semibold">
@@ -143,7 +145,10 @@ const Contact = () => {
             Send Message
           </button>
         </form>
+
       </div>
+    </div>
+      <NewsLatter/>
     </div>
   );
 };
