@@ -57,7 +57,7 @@ const Register = () => {
 
   const handleTermsChange = (e) => setAcceptedTerms(e.target.checked); // Handle checkbox change
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Perform form submission logic here
     console.log("Form submitted with data:", {
