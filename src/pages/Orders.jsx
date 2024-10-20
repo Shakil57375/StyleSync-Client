@@ -34,8 +34,8 @@ const Orders = () => {
   return (
     <div className="container mx-auto p-4">
       <Title title={"My Orders"} />
-
-      <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+      <p>this feature is under contraction coming soon</p>
+      {/* <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
         <thead>
           <tr className="bg-gray-200 text-gray-700">
             <th className="py-3 px-6 text-left">#</th>
@@ -47,16 +47,13 @@ const Orders = () => {
             <th className="py-3 px-6 text-left">Date</th>
             <th className="py-3 px-6 text-left">Status</th>
             <th className="py-3 px-6 text-left">Track</th>
-            {/* Change header alignment */}
           </tr>
         </thead>
         <tbody>
           {products.slice(1, 4).map((product, index) => (
             <tr key={product._id} className="border-b hover:bg-gray-100">
-              {/* Serial Number */}
               <td className="py-4 px-6">{index + 1}</td>
 
-              {/* Product Image Slider */}
               <td className="py-4 px-6">
                 <div className="w-40 h-40 overflow-hidden rounded-xl">
                   <Slider {...sliderSettings}>
@@ -73,20 +70,16 @@ const Orders = () => {
                 </div>
               </td>
 
-              {/* Product Name */}
               <td className="py-4 px-6">
                 <p className="text-xl">{product.name}</p>
               </td>
-              {/* Product Name */}
               <td className="py-4 px-6">
                 <p className="text-xl pl-5">M</p>
               </td>
-              {/* Product Name */}
               <td className="py-4 px-6">
                 <p className="text-xl pl-5">3</p>
               </td>
 
-              {/* Product Price */}
               <td className="py-4 px-6">
                 {currency}
                 {product.discountPrice}
@@ -98,23 +91,20 @@ const Orders = () => {
                 )}
               </td>
 
-              {/* Order Date */}
               <td className="py-4 px-6">
                 <span>12-03-2024</span>
               </td>
 
-              {/* Product order status */}
               <td className="py-4 px-6  ">
                 <span>Ready to ship</span>
               </td>
-              {/* Product order status */}
               <td className="py-4 px-6  ">
                 <button className="border border-gray-500 px-4 py-2 rounded-md">Track Order</button>
               </td>
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 };
